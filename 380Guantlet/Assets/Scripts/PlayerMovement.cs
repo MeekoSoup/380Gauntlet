@@ -7,18 +7,29 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
 
-    private Vector3 _velocity;
-  
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float speed = 6f;
+    [SerializeField] private float _maximumVelocity = 10f;
+    [SerializeField] private float _movementForce = 10f;
 
     private void Awake()
     {
         rb = this.GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    void FixedUpdate()
     {
-       
+        if (rb.velocity.magnitude >= _maximumVelocity)
+            return;
+        if (Input.GetKey(KeyCode.W))
+            rb.AddForce(_movementForce * transform.forward);
+        //-forward gives us backward
+        if (Input.GetKey(KeyCode.S))
+            rb.AddForce(_movementForce * -transform.forward);
+        if (Input.GetKey(KeyCode.D))
+            rb.AddForce(_movementForce * transform.right);
+        //-right gives us left
+        if (Input.GetKey(KeyCode.A))
+            rb.AddForce(_movementForce * -transform.right);
     }
 
     //might work with Gamepad callback
