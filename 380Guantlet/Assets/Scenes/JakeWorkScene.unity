@@ -717,7 +717,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898501873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.17, y: 1, z: 10}
+  m_LocalPosition: {x: 16, y: 1, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1377328133}
@@ -741,6 +741,7 @@ MonoBehaviour:
   enemyHealth: 0
   enemyLevel: 0
   enemyDamage: 0
+  isAttacking: 0
 --- !u!195 &1898501879
 NavMeshAgent:
   m_ObjectHideFlags: 0

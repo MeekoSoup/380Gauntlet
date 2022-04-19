@@ -18,12 +18,14 @@ public class BaseEnemy : MonoBehaviour
     protected EnemyStopState _stopState;
     protected EnemyAttackState _attackState;
 
-    protected bool isAttacking;
+    public bool isAttacking;
 
     protected void Awake()
     {
         enemy = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
+
+        enemy.destination = player.transform.position;
         enemy.speed = 0;
 
         _enemyStateContext = new EnemyStateContext(this);
@@ -36,8 +38,7 @@ public class BaseEnemy : MonoBehaviour
     protected void Start()
     {
         enemy.updateRotation = true;
-        _enemyStateContext.Transition(_stopState);
-        
+        _enemyStateContext.Transition(_stopState);        
     }
 
     protected void Update()
@@ -45,13 +46,12 @@ public class BaseEnemy : MonoBehaviour
         if(enemy.remainingDistance <= enemy.stoppingDistance)
         {
             _enemyStateContext.Transition(_attackState);
-        }           
+        }
     }
 
     public virtual void AttackPattern()
     {
-        Debug.Log("Enemy Attacking");
-
+        Debug.Log("Is Attacking");
     }
 
     /*private void OnGUI()

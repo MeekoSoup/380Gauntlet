@@ -11,6 +11,7 @@ public class EnemyAttackState : MonoBehaviour, IEnemyState
         if (!_baseEnemy)
             _baseEnemy = baseEnemy;
 
+        baseEnemy.isAttacking = true;
         baseEnemy.enemy.updateRotation = true;
         transform.LookAt(baseEnemy.player.transform);
         baseEnemy.AttackPattern();
