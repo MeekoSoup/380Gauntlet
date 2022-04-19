@@ -2,6 +2,17 @@
 
 namespace Data
 {
+    /**
+     * EventNetwork is used to communicate common events across the whole game. These usually fall under player events,
+     * enemy events, and audio events (specifically considering the game's announcer).
+     *
+     * As a ScriptableObject, it is a plug-'n-play style object, so use it whenever a script needs to invoke one of
+     * these events, or listen for one of them to be invoked.
+     *
+     * When a player event is invoked with no parameters, it signifies that the specific player is not important, so
+     * make sure to accomodate this if you are invoking player events. 
+     */
+    
     [CreateAssetMenu(fileName = "EventNetwork", menuName = "Game/EventNetwork", order = 51)]
     public class EventNetwork : ScriptableObject
     {
