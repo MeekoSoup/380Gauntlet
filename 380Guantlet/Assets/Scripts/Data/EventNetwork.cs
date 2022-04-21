@@ -19,6 +19,9 @@ namespace Data
         public PlayerEvent OnPlayerDisconnect;
         public PlayerEvent OnPlayerReconnect;
         public PlayerEvent OnPlayerLeavesCameraZone;
+        public PlayerEvent OnPlayerShootFood;
+        public PlayerEvent OnPlayerDestroyFood;
+        public PlayerEvent OnPlayerShootPlayer;
 
         // should probably be overloaded with a parameter for the enemy controller
         public delegate void EnemyEvent();
