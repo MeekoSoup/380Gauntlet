@@ -22,6 +22,7 @@ namespace Data
         public PlayerEvent OnPlayerShootFood;
         public PlayerEvent OnPlayerDestroyFood;
         public PlayerEvent OnPlayerShootPlayer;
+        public PlayerEvent OnPlayerShotMissed;
 
         // should probably be overloaded with a parameter for the enemy controller
         public delegate void EnemyEvent();
