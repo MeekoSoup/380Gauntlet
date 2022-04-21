@@ -6,9 +6,9 @@ namespace Data
     public class PlayerData : ScriptableObject
     {
         public int controllerID;
-        public int healthCurrent;
-        public int healthMax;
+        public int health;
         public int score;
+        public int keys;
         public bool isHost;
     }
 }

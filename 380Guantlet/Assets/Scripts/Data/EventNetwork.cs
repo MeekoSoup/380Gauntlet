@@ -14,6 +14,7 @@ namespace Data
         public PlayerEvent OnPlayerRevived;
         public PlayerEvent OnPlayerScored;
         public PlayerEvent OnPlayerPickup;
+        public PlayerEvent OnPlayerPickupNuke;
         public PlayerEvent OnPlayerExitStage;
         public PlayerEvent OnPlayerDisconnect;
         public PlayerEvent OnPlayerReconnect;
