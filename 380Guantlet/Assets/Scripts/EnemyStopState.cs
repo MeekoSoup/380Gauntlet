@@ -12,6 +12,6 @@ public class EnemyStopState : MonoBehaviour, IEnemyState
             _baseEnemy = baseEnemy;
 
         baseEnemy.enemy.speed = 0;
-        Debug.Log("Stop State");
+        //Debug.Log("Stop State");
     }
 }

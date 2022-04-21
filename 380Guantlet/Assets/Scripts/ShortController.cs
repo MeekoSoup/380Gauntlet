@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ShortController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int health;
+    private BaseEnemy _enemy;
+
     void Start()
     {
-        
+        health = 100;
     }
 
     // Update is called once per frame
@@ -25,4 +27,18 @@ public class ShortController : MonoBehaviour
         if (Input.GetKey("s"))
             transform.Translate(Vector3.back * Time.deltaTime * 10);
     }
+
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ghost"))
+            Destroy(collision.gameObject);
+    }
+
+    private void OnGUI()
+    {
+        if (GUI.Button(new Rect(10, 10, 150, 100), "Take Damage"))
+        {
+            health -=
+        }
+    }*/
 }
