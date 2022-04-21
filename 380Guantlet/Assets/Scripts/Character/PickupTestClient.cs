@@ -1,10 +1,16 @@
 ﻿using System;
-using System.Reflection.Emit;
 using Data;
 using UnityEngine;
 
 namespace Character
 {
+    /**
+     * PickupTestClient is just a test script for testing the interaction between Pickups and the PickupManager.
+     *
+     * DO NOT USE IN PRODUCTION
+     *
+     * @author: Weston R. Campbell 
+     */
     public class PickupTestClient : MonoBehaviour
     {
         public EventNetwork eventNetwork;
@@ -21,6 +27,11 @@ namespace Character
         private void OnEnable()
         {
             eventNetwork.OnPlayerPickupNuke += NukeTest;
+        }
+
+        private void OnDisable()
+        {
+            eventNetwork.OnPlayerPickupNuke -= NukeTest;
         }
 
         private void OnGUI()
