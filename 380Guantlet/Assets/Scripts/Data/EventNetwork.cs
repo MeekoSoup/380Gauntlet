@@ -6,7 +6,7 @@ namespace Data
     public class EventNetwork : ScriptableObject
     {
         // We can have an empty overloaded method if the specific player isn't needed
-        public delegate void PlayerEvent(PlayerData playerData);
+        public delegate void PlayerEvent(PlayerData playerData = null);
 
         public PlayerEvent OnPlayerDamaged;
         public PlayerEvent OnPlayerKilled;
@@ -14,10 +14,14 @@ namespace Data
         public PlayerEvent OnPlayerRevived;
         public PlayerEvent OnPlayerScored;
         public PlayerEvent OnPlayerPickup;
+        public PlayerEvent OnPlayerPickupNuke;
         public PlayerEvent OnPlayerExitStage;
         public PlayerEvent OnPlayerDisconnect;
         public PlayerEvent OnPlayerReconnect;
         public PlayerEvent OnPlayerLeavesCameraZone;
+        public PlayerEvent OnPlayerShootFood;
+        public PlayerEvent OnPlayerDestroyFood;
+        public PlayerEvent OnPlayerShootPlayer;
 
         // should probably be overloaded with a parameter for the enemy controller
         public delegate void EnemyEvent();

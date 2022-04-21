@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player1
   m_EditorClassIdentifier: 
   controllerID: 0
-  healthCurrent: 0
-  healthMax: 0
+  health: 0
   score: 0
+  keys: 0
   isHost: 0
