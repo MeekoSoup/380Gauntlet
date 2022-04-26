@@ -65,7 +65,7 @@ public class BaseEnemy : MonoBehaviour
 
     private void OnGUI()
     {
-        if (GUI.Button(new Rect(10, 10, 150, 100), "Take Damage"))
+        /*if (GUI.Button(new Rect(10, 10, 150, 100), "Take Damage"))
         {
             enemyLevel--;
             LevelCheck();
@@ -97,6 +97,7 @@ public class BaseEnemy : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
             _player.health -= enemyDamage;
+
     }
 
     protected void OnTriggerExit(Collider other)
