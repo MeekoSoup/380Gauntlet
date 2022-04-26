@@ -5,18 +5,29 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody rb;
-
     [SerializeField] private float speed = 6f;
-    [SerializeField] private float _maximumVelocity = 10f;
-    [SerializeField] private float _movementForce = 10f;
+    /*private Rigidbody rb;
+    * [SerializeField] private float _maximumVelocity = 10f;
+    * [SerializeField] private float _movementForce = 10f;
+    */
+    private Vector2 movementInput;
 
-    private void Awake()
+    /*private void Awake()
     {
         rb = this.GetComponent<Rigidbody>();
+    }*/
+
+    private void Update()
+    {
+        transform.Translate(new Vector3(movementInput.x, 0, movementInput.y) * speed * Time.deltaTime);
     }
 
-    void FixedUpdate()
+    public void OnMove(InputAction.CallbackContext ct)
+    {
+        movementInput = ct.ReadValue<Vector2>();
+    }
+
+    /*void FixedUpdate()
     {
         if (rb.velocity.magnitude >= _maximumVelocity)
             return;
@@ -30,17 +41,5 @@ public class PlayerMovement : MonoBehaviour
         //-right gives us left
         if (Input.GetKey(KeyCode.A))
             rb.AddForce(_movementForce * -transform.right);
-    }
-
-    //might work with Gamepad callback
-    public void Move(InputAction.CallbackContext context)
-    {
-        Debug.Log("Move!" + context.phase);
-
-        if (context.performed)
-        {
-            Vector2 myVector = context.ReadValue<Vector2>();
-            rb.AddForce(new Vector3(myVector.x, 0, myVector.y) * speed, ForceMode.Force);
-        }
-    }
+    }*/
 }
