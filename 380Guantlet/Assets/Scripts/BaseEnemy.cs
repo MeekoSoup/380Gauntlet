@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using Data;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class BaseEnemy : MonoBehaviour
 {
+    public EventNetwork eventNetwork;
     public NavMeshAgent enemy;
     public GameObject player;
     protected ShortController _player;
@@ -87,7 +87,7 @@ public class BaseEnemy : MonoBehaviour
         GUI.Label(new Rect(150, 20, 500, 20), "Enemy Level: " + enemyLevel);*/
     }
 
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("DetectRadius"))
             _enemyStateContext.Transition(_startState);
@@ -96,7 +96,16 @@ public class BaseEnemy : MonoBehaviour
             enemyLevel--;*/
 
         if (other.gameObject.CompareTag("Player"))
-            _player.health -= enemyDamage;
+        {
+            DamagePlayer();
+            TakeDamage();
+        }
+    }
+
+    private void DamagePlayer()
+    {
+        _player.health -= enemyDamage;
+        eventNetwork.OnPlayerDamaged?.Invoke();
     }
 
     protected void OnTriggerExit(Collider other)
@@ -108,6 +117,12 @@ public class BaseEnemy : MonoBehaviour
     protected void LevelCheck()
     {
         int number = enemyLevel;
+
+        if (enemyLevel <= 0)
+        {
+            Release();
+            return;
+        }
         
 
         switch (number)
@@ -129,5 +144,18 @@ public class BaseEnemy : MonoBehaviour
         }
 
         this.GetComponent<MeshRenderer>().material.color = enemyColor;
+    }
+
+    protected void TakeDamage()
+    {
+        enemyLevel--;
+        eventNetwork.OnEnemyDamaged?.Invoke();
+        LevelCheck();
+    }
+
+    protected void Release()
+    {
+        eventNetwork.OnEnemyKilled?.Invoke();
+        Destroy(gameObject);
     }
 }

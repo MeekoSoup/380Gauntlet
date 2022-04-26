@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class Ghost : BaseEnemy
 {
     public void Start()
@@ -20,12 +16,12 @@ public class Ghost : BaseEnemy
         print("ghost attack");
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            _player.health -= enemyDamage;
-            Destroy(this.gameObject);
-        }
-    }
+    // private void OnCollisionEnter(Collision collision)
+    // {
+    //     if (collision.gameObject.CompareTag("Player"))
+    //     {
+    //         _player.health -= enemyDamage;
+    //         Destroy(this.gameObject);
+    //     }
+    // }
 }
