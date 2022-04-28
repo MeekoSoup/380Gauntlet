@@ -6,6 +6,7 @@ public class Grunt : BaseEnemy
 {
     public GameObject club;
     private bool _delay = true;
+    
 
     public void Start()
     {
@@ -16,14 +17,20 @@ public class Grunt : BaseEnemy
         LevelCheck();
 
         enemy.stoppingDistance = 3.4f;
-
-        club.SetActive(false);
+        
+        club.GetComponent<EnemyProjectile>().deathTimer = 0.3f;
     }
 
     public override void AttackPattern()
     {
+        if(enemy.remainingDistance > enemy.stoppingDistance)
+        {
+            _enemyStateContext.Transition(_startState);
+        }
+
         if (_delay)
         {
+            _playerPos = player.transform.position;
             StartCoroutine(ClubAttack());
         }
     }
@@ -31,10 +38,14 @@ public class Grunt : BaseEnemy
     private IEnumerator ClubAttack()
     {
         _delay = false;
-        club.SetActive(true);
-        yield return new WaitForSeconds(0.3f);
-        club.SetActive(false);
+        Instantiate(club, this.transform.position, Quaternion.identity);
         yield return new WaitForSeconds(2);
         _delay = true;
+    }
+
+    public override void ProjectileMove(Rigidbody club)
+    {
+        //club.velocity = Vector3.forward.normalized * 3f;
+        club.AddForce((_playerPos - club.transform.position).normalized * 3f, ForceMode.VelocityChange);
     }
 }

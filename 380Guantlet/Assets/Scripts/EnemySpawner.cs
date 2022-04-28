@@ -27,4 +27,10 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(2);
         StartCoroutine(SpawnEnemies());
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Weapon")
+            Destroy(this.gameObject);
+    }
 }

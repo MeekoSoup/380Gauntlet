@@ -8,6 +8,7 @@ public class BaseEnemy : MonoBehaviour
     public NavMeshAgent enemy;
     public GameObject player;
     protected ShortController _player;
+    protected Vector3 _playerPos;
 
     protected EnemyStateContext _enemyStateContext;
 
@@ -28,7 +29,7 @@ public class BaseEnemy : MonoBehaviour
     private Material enemyMat;
     private Color enemyColor;
 
-    protected void Awake()
+    public void Awake()
     {
         enemy = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -49,9 +50,10 @@ public class BaseEnemy : MonoBehaviour
         _enemyStateContext.Transition(_stopState);
     }
 
-    protected void Update()
+    public void Update()
     {
         enemy.destination = player.transform.position;
+        _playerPos = player.transform.position;
         if (enemy.remainingDistance <= enemy.stoppingDistance)
         {
             _enemyStateContext.Transition(_attackState);
@@ -130,5 +132,10 @@ public class BaseEnemy : MonoBehaviour
         }
 
         this.GetComponent<MeshRenderer>().material.color = enemyColor;
+    }
+
+    public virtual void ProjectileMove(Rigidbody projectile)
+    {
+
     }
 }
