@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Data;
@@ -6,6 +5,21 @@ using Data;
 namespace Camera
 {
     using UnityEngine;
+    
+    /**
+     * CameraManager is designed to search for targets by their GameObject tags, and attempt to keep them all in view
+     * while they move around. It will change its rotation and field of view to try to keep them all in view, but it
+     * will not change its original position.
+     *
+     * TODO: If the position of the camera itself needs to change, then parts of this script need to be rewritten.
+     *
+     * Properties for this class are described below via Headers/Tooltips.
+     *
+     * CameraManager invokes EventNetwork.OnPlayerLeavesCameraZone with no PlayerData right now, because it currently
+     * doesn't have a way to extract that data from the objects it collects.
+     *
+     * TODO: Rewrite when PlayerData can be extracted from the GameObjects.
+     */
     
     [RequireComponent(typeof(Camera))]
     public class CameraManager : MonoBehaviour
