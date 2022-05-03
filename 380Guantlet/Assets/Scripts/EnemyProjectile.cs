@@ -6,13 +6,14 @@ public class EnemyProjectile : MonoBehaviour
 {
     private Rigidbody _projectile;
     public float deathTimer;
+    public float speed;
     public BaseEnemy enemy;
     private ShortController _player;
 
     private void Awake()
     {
         _projectile = this.GetComponent<Rigidbody>();
-        enemy.ProjectileMove(_projectile);
+        _projectile.AddForce((enemy.playerPos - this.transform.position).normalized * speed, ForceMode.VelocityChange);
         StartCoroutine(ProjectileDeath(deathTimer));
     }
 

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Grunt : BaseEnemy
 {
-    public GameObject club;
+    public GameObject clubGO;
     private bool _delay = true;
-    
+    private Vector3 _projLoc;
 
     public void Start()
     {
@@ -17,20 +17,24 @@ public class Grunt : BaseEnemy
         LevelCheck();
 
         enemy.stoppingDistance = 3.4f;
-        
-        club.GetComponent<EnemyProjectile>().deathTimer = 0.3f;
+
+        //player = GameObject.FindGameObjectWithTag("Player");
+
+        clubGO.GetComponent<EnemyProjectile>().deathTimer = 0.3f;
+        clubGO.GetComponent<EnemyProjectile>().speed = 3f;
+        clubGO.GetComponent<EnemyProjectile>().enemy = this.GetComponent<Grunt>();
     }
 
     public override void AttackPattern()
     {
-        if(enemy.remainingDistance > enemy.stoppingDistance)
+        if(enemy.remainingDistance > enemy.stoppingDistance && enemy.speed == 0)
         {
             _enemyStateContext.Transition(_startState);
         }
 
         if (_delay)
         {
-            _playerPos = player.transform.position;
+            //_playerPos = player.transform.position;
             StartCoroutine(ClubAttack());
         }
     }
@@ -38,14 +42,9 @@ public class Grunt : BaseEnemy
     private IEnumerator ClubAttack()
     {
         _delay = false;
-        Instantiate(club, this.transform.position, Quaternion.identity);
+        Instantiate(clubGO, this.transform.position, this.transform.rotation);
         yield return new WaitForSeconds(2);
         _delay = true;
     }
 
-    public override void ProjectileMove(Rigidbody club)
-    {
-        //club.velocity = Vector3.forward.normalized * 3f;
-        club.AddForce((_playerPos - club.transform.position).normalized * 3f, ForceMode.VelocityChange);
-    }
 }

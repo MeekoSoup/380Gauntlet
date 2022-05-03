@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyToSpawn;
+    public float spawnDelay;
     private BaseEnemy _baseEnemy;
 
     [Range(1, 3)]
@@ -18,14 +19,14 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(SpawnEnemies());
+        StartCoroutine(SpawnEnemies(spawnDelay));
     }
 
-    private IEnumerator SpawnEnemies()
+    private IEnumerator SpawnEnemies(float seconds)
     {
         Instantiate(enemyToSpawn, this.transform.position, this.transform.rotation);
-        yield return new WaitForSeconds(2);
-        StartCoroutine(SpawnEnemies());
+        yield return new WaitForSeconds(seconds);
+        StartCoroutine(SpawnEnemies(spawnDelay));
     }
 
     private void OnTriggerEnter(Collider other)

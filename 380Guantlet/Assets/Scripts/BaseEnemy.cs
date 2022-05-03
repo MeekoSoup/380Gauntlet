@@ -8,7 +8,7 @@ public class BaseEnemy : MonoBehaviour
     public NavMeshAgent enemy;
     public GameObject player;
     protected ShortController _player;
-    protected Vector3 _playerPos;
+    public Vector3 playerPos;
 
     protected EnemyStateContext _enemyStateContext;
 
@@ -53,7 +53,7 @@ public class BaseEnemy : MonoBehaviour
     public void Update()
     {
         enemy.destination = player.transform.position;
-        _playerPos = player.transform.position;
+        playerPos = player.transform.position;
         if (enemy.remainingDistance <= enemy.stoppingDistance)
         {
             _enemyStateContext.Transition(_attackState);
@@ -67,13 +67,12 @@ public class BaseEnemy : MonoBehaviour
 
     private void OnGUI()
     {
-        /*if (GUI.Button(new Rect(10, 10, 150, 100), "Take Damage"))
+        /*if (GUI.Button(new Rect(10, 10, 150, 100), "Show Location"))
         {
-            enemyLevel--;
-            LevelCheck();
+            Debug.Log(_playerPos);
         }
 
-        if (GUI.Button(new Rect(10, 110, 150, 100), "Increase Level"))
+        /*if (GUI.Button(new Rect(10, 110, 150, 100), "Increase Level"))
         {
             enemyLevel++;
             LevelCheck();
@@ -132,10 +131,5 @@ public class BaseEnemy : MonoBehaviour
         }
 
         this.GetComponent<MeshRenderer>().material.color = enemyColor;
-    }
-
-    public virtual void ProjectileMove(Rigidbody projectile)
-    {
-
     }
 }
