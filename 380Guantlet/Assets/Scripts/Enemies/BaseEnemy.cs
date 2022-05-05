@@ -1,3 +1,4 @@
+using System;
 using Data;
 using UnityEngine;
 using UnityEngine.AI;
@@ -33,7 +34,7 @@ public class BaseEnemy : MonoBehaviour
         enemy = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
 
-        _player = player.GetComponent<ShortController>();
+        // _player = player.GetComponent<ShortController>();
         enemyMat = this.GetComponent<MeshRenderer>().material;
         enemyColor = this.GetComponent<MeshRenderer>().material.color;
         
@@ -49,8 +50,27 @@ public class BaseEnemy : MonoBehaviour
         _enemyStateContext.Transition(_stopState);
     }
 
+    private void OnEnable()
+    {
+        eventNetwork.OnPlayerJoined += UpdateTarget;
+    }
+
+    private void OnDisable()
+    {
+        eventNetwork.OnPlayerJoined -= UpdateTarget;
+    }
+
+    private void UpdateTarget(PlayerData playerdata = null)
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     protected void Update()
     {
+        // if we haven't found a player yet, do nothing.
+        if (!player)
+            return;
+        
         enemy.destination = player.transform.position;
         if (enemy.remainingDistance <= enemy.stoppingDistance)
         {
@@ -104,7 +124,7 @@ public class BaseEnemy : MonoBehaviour
 
     private void DamagePlayer()
     {
-        _player.health -= enemyDamage;
+        // _player.health -= enemyDamage;
         eventNetwork.OnPlayerDamaged?.Invoke();
     }
 
