@@ -9,6 +9,7 @@ public class BaseEnemy : MonoBehaviour
     public GameObject player;
     protected ShortController _player;
     public Vector3 playerPos;
+    public bool isProjectile;
 
     protected EnemyStateContext _enemyStateContext;
 
@@ -25,9 +26,10 @@ public class BaseEnemy : MonoBehaviour
     protected EnemyAttackState _attackState;
 
     public bool isAttacking;
+    public bool canBeHit;
 
     private Material enemyMat;
-    private Color enemyColor;
+    protected Color enemyColor;
 
     public void Awake()
     {
@@ -39,6 +41,7 @@ public class BaseEnemy : MonoBehaviour
         enemyColor = this.GetComponent<MeshRenderer>().material.color;
         
         enemy.speed = 0;
+        canBeHit = true;
 
         _enemyStateContext = new EnemyStateContext(this);
 
@@ -93,7 +96,7 @@ public class BaseEnemy : MonoBehaviour
         if (other.gameObject.CompareTag("DetectRadius"))
             _enemyStateContext.Transition(_startState);
 
-        /*if (other.gameObject.CompareTag("Weapon"))
+        /*if (other.gameObject.CompareTag("Weapon") && canBeHit)
             enemyLevel--;*/
 
         if (other.gameObject.CompareTag("Player"))

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - DetectRadius
   - Ghost
+  - Fireball
+  - Enemy
+  - Item
   layers:
   - Default
   - TransparentFX

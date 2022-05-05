@@ -33,5 +33,8 @@ public class EnemySpawner : MonoBehaviour
     {
         if (other.gameObject.tag == "Weapon")
             Destroy(this.gameObject);
+
+        if (other.gameObject.tag == "Fireball")
+            Destroy(this.gameObject);
     }
 }

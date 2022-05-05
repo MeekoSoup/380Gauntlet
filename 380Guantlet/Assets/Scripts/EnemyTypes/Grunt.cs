@@ -6,7 +6,6 @@ public class Grunt : BaseEnemy
 {
     public GameObject clubGO;
     private bool _delay = true;
-    private Vector3 _projLoc;
 
     public void Start()
     {
