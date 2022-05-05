@@ -8,6 +8,8 @@ public class BaseEnemy : MonoBehaviour
     public NavMeshAgent enemy;
     public GameObject player;
     protected ShortController _player;
+    public Vector3 playerPos;
+    public bool isProjectile;
 
     protected EnemyStateContext _enemyStateContext;
 
@@ -24,6 +26,7 @@ public class BaseEnemy : MonoBehaviour
     protected EnemyAttackState _attackState;
 
     public bool isAttacking;
+    public bool canBeHit;
 
     private Material enemyMat;
     private Color enemyColor;
@@ -38,6 +41,7 @@ public class BaseEnemy : MonoBehaviour
         enemyColor = this.GetComponent<MeshRenderer>().material.color;
         
         enemy.speed = 0;
+        canBeHit = true;
 
         _enemyStateContext = new EnemyStateContext(this);
 
@@ -52,6 +56,7 @@ public class BaseEnemy : MonoBehaviour
     protected void Update()
     {
         enemy.destination = player.transform.position;
+        playerPos = player.transform.position;
         if (enemy.remainingDistance <= enemy.stoppingDistance)
         {
             _enemyStateContext.Transition(_attackState);
@@ -92,7 +97,7 @@ public class BaseEnemy : MonoBehaviour
         if (other.gameObject.CompareTag("DetectRadius"))
             _enemyStateContext.Transition(_startState);
 
-        /*if (other.gameObject.CompareTag("Weapon"))
+        /*if (other.gameObject.CompareTag("Weapon") && canBeHit)
             enemyLevel--;*/
 
         if (other.gameObject.CompareTag("Player"))
