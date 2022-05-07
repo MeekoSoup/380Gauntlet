@@ -23,14 +23,11 @@ public class Thor : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponenet<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown = "space")
-        {
-
-        }
+        
     }
 }

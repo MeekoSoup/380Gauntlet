@@ -1,33 +1,31 @@
-using System;
 using Data;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 public class BaseEnemy : MonoBehaviour
 {
     public EventNetwork eventNetwork;
     public NavMeshAgent enemy;
     public GameObject player;
-    protected ShortController _player;
-
-    protected EnemyStateContext _enemyStateContext;
-
-    //public int enemyHealth;
+    public bool isProjectile;
     public int enemyLevel;
     public int enemyDamage;
-
+    public bool isAttacking;
+    public bool canBeHit;
+    
     protected int damageOne;
     protected int damageTwo;
     protected int damageThree;
-
+    
+    protected EnemyStateContext _enemyStateContext;
+    
     protected EnemyStartState _startState;
     protected EnemyStopState _stopState;
     protected EnemyAttackState _attackState;
-
-    public bool isAttacking;
-
-    private Material enemyMat;
-    private Color enemyColor;
+    
+    protected Color enemyColor;
+    protected Material enemyMat;
 
     protected void Awake()
     {
@@ -52,17 +50,23 @@ public class BaseEnemy : MonoBehaviour
 
     private void OnEnable()
     {
-        eventNetwork.OnPlayerJoined += UpdateTarget;
+        eventNetwork.OnPlayerJoined += UpdatePlayer;
     }
 
     private void OnDisable()
     {
-        eventNetwork.OnPlayerJoined -= UpdateTarget;
+        eventNetwork.OnPlayerJoined -= UpdatePlayer;
     }
 
-    private void UpdateTarget(PlayerData playerdata = null)
+    private void UpdatePlayer(PlayerInput playerInput = null)
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        if (playerInput)
+            player = playerInput.gameObject;
+        else
+            player = FindObjectOfType<PlayerMovement>().gameObject;
+
+        UpdateDestination();
+        // player = GameObject.FindGameObjectWithTag("Player");
     }
 
     protected void Update()
@@ -70,7 +74,12 @@ public class BaseEnemy : MonoBehaviour
         // if we haven't found a player yet, do nothing.
         if (!player)
             return;
-        
+
+        UpdateDestination();
+    }
+
+    private void UpdateDestination()
+    {
         enemy.destination = player.transform.position;
         if (enemy.remainingDistance <= enemy.stoppingDistance)
         {
@@ -83,29 +92,29 @@ public class BaseEnemy : MonoBehaviour
         print("attacking");
     }
 
-    private void OnGUI()
-    {
-        if (GUI.Button(new Rect(10, 10, 150, 100), "Take Damage"))
-        {
-            enemyLevel--;
-            LevelCheck();
-        }
-
-        if (GUI.Button(new Rect(10, 110, 150, 100), "Increase Level"))
-        {
-            enemyLevel++;
-            LevelCheck();
-        }
-
-        /*if (GUI.Button(new Rect(10, 210, 150, 100), "Change Color"))
-        {
-            
-        }
-
-        /*GUI.color = Color.black;
-        GUI.Label(new Rect(150, 0, 500, 20), "Player Health: " + _player.health);
-        GUI.Label(new Rect(150, 20, 500, 20), "Enemy Level: " + enemyLevel);*/
-    }
+//     private void OnGUI()
+//     {
+//         if (GUI.Button(new Rect(10, 10, 150, 100), "Take Damage"))
+//         {
+//             enemyLevel--;
+//             LevelCheck();
+//         }
+//
+//         if (GUI.Button(new Rect(10, 110, 150, 100), "Increase Level"))
+//         {
+//             enemyLevel++;
+//             LevelCheck();
+//         }
+//
+//         /*if (GUI.Button(new Rect(10, 210, 150, 100), "Change Color"))
+//         {
+//             
+//         }
+//
+//         /*GUI.color = Color.black;
+//         GUI.Label(new Rect(150, 0, 500, 20), "Player Health: " + _player.health);
+//         GUI.Label(new Rect(150, 20, 500, 20), "Enemy Level: " + enemyLevel);*/
+//     }
 
     private void OnTriggerEnter(Collider other)
     {

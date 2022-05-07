@@ -149,12 +149,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee0e53c68465b5478cd19dbf867d4a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventNetwork: {fileID: 11400000, guid: a2f4d92285644e745bece6b797bbad48, type: 2}
   enemy: {fileID: 0}
   player: {fileID: 0}
-  playerPos: {x: 0, y: 0, z: 0}
   isProjectile: 0
   enemyLevel: 0
   enemyDamage: 0
   isAttacking: 0
+  canBeHit: 0
   biteGO: {fileID: 6028963542542272552, guid: f4e7d26d424ee0248b9038816d74ac09, type: 3}
   fireballGO: {fileID: 9189276133914474540, guid: c7bbb2800809a71419218593e0342ec9, type: 3}

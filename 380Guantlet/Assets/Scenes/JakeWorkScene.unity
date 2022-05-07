@@ -711,7 +711,6 @@ MonoBehaviour:
   eventNetwork: {fileID: 11400000, guid: a2f4d92285644e745bece6b797bbad48, type: 2}
   enemy: {fileID: 0}
   player: {fileID: 0}
-  playerPos: {x: 0, y: 0, z: 0}
   isProjectile: 0
   enemyLevel: 3
   enemyDamage: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 478611103041275704}
   - component: {fileID: 478611103041275705}
   - component: {fileID: 478611103041275707}
+  - component: {fileID: -3004780744038673260}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -63,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0214bdde2db9e69479e0e30bf8c3c456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventNetwork: {fileID: 0}
+  eventNetwork: {fileID: 11400000, guid: a2f4d92285644e745bece6b797bbad48, type: 2}
   speed: 6
 --- !u!114 &478611103041275707
 MonoBehaviour:
@@ -107,10 +108,23 @@ MonoBehaviour:
     m_ActionId: d61f3055-cea4-4e4d-ab2d-8429ccd5ed85
     m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &-3004780744038673260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478611103041275711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9707693d45da484ba6d4ab4eafb432ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventNetwork: {fileID: 11400000, guid: a2f4d92285644e745bece6b797bbad48, type: 2}
 --- !u!1 &478611103130971831
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +215,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478611103130971831}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -296,7 +310,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478611104219571719}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

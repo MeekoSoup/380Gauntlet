@@ -149,9 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275dd8a633df4ee41b39133f3236adff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventNetwork: {fileID: 11400000, guid: a2f4d92285644e745bece6b797bbad48, type: 2}
   enemy: {fileID: 0}
   player: {fileID: 0}
-  playerPos: {x: 0, y: 0, z: 0}
   isProjectile: 0
   enemyLevel: 3
   enemyDamage: 0

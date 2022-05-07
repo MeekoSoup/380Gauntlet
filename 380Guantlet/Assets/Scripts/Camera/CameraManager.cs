@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Data;
+using UnityEngine.InputSystem;
 
 namespace Camera
 {
@@ -85,7 +86,7 @@ namespace Camera
             ZoomToTargets();
         }
 
-        private void PlayersChanged(PlayerData playerData = null)
+        private void PlayersChanged(PlayerInput playerInput = null)
         {
             // TODO: when player data can be extracted from the player objects, amend this!
             _playersChanged = true;

@@ -26,8 +26,8 @@ namespace Character
             playerData.health += pickup.healthMod;
             playerData.score += pickup.scoreMod;
             if (pickup.isKey) playerData.keys++;
-            if (pickup.isNuke) eventNetwork.OnPlayerPickupNuke?.Invoke(playerData);
-            eventNetwork.OnPlayerPickup?.Invoke(playerData);
+            if (pickup.isNuke) eventNetwork.OnPlayerPickupNuke?.Invoke();
+            eventNetwork.OnPlayerPickup?.Invoke();
             pickup.Release();
         }
     }

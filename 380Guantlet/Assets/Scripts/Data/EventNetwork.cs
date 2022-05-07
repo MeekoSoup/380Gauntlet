@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Data
 {
@@ -17,7 +18,7 @@ namespace Data
     public class EventNetwork : ScriptableObject
     {
         // We can have an empty overloaded method if the specific player isn't needed
-        public delegate void PlayerEvent(PlayerData playerData = null);
+        public delegate void PlayerEvent(PlayerInput playerInput = null);
 
         public PlayerEvent OnPlayerDamaged;
         public PlayerEvent OnPlayerKilled;

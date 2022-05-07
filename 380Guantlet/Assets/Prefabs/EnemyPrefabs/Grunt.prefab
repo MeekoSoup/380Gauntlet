@@ -149,10 +149,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d93366b78eb5b142b95b9c25d2a30b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventNetwork: {fileID: 11400000, guid: a2f4d92285644e745bece6b797bbad48, type: 2}
   enemy: {fileID: 0}
   player: {fileID: 0}
-  playerPos: {x: 0, y: 0, z: 0}
+  isProjectile: 0
   enemyLevel: 0
   enemyDamage: 0
   isAttacking: 0
+  canBeHit: 0
   clubGO: {fileID: 6028963542542272552, guid: 3e1382b9325ef2240a4b9f5e67b1f1c8, type: 3}
