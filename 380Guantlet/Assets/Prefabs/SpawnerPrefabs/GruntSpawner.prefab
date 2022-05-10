@@ -140,4 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyToSpawn: {fileID: 1356843858888993173, guid: 4be8f2c51a4acd041b59f7e0dfad1bb1, type: 3}
-  enemyLevel: 3
+  spawnDelay: 0
+  spawnerLevel: 3
+  isBones: 0
