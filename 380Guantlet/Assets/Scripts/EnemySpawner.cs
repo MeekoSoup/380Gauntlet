@@ -9,12 +9,13 @@ public class EnemySpawner : MonoBehaviour
     private BaseEnemy _baseEnemy;
 
     [Range(1, 3)]
-    public int enemyLevel;
+    public int spawnerLevel;
+    public bool isBones;
 
     private void Awake()
     {
         _baseEnemy = enemyToSpawn.GetComponent<BaseEnemy>();
-        _baseEnemy.enemyLevel = enemyLevel;
+        _baseEnemy.enemyLevel = spawnerLevel;
     }
 
     private void OnEnable()
@@ -31,10 +32,30 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Weapon")
+        if (other.gameObject.tag == "Weapon" && !isBones)
+        {
+            spawnerLevel--;
+            _baseEnemy.enemyLevel = spawnerLevel;
+            if (spawnerLevel <= 0)
+                Destroy(this.gameObject);
+        }
+        if(other.gameObject.tag == "Weapon" && isBones)
             Destroy(this.gameObject);
 
         if (other.gameObject.tag == "Fireball")
             Destroy(this.gameObject);
     }
+
+    /*private void OnGUI()
+    {
+        if (GUI.Button(new Rect(10, 10, 150, 100), "Spanwer Hit"))
+        {
+            spawnerLevel--;
+            _baseEnemy.enemyLevel = spawnerLevel;
+            if (spawnerLevel <= 0)
+                Destroy(this.gameObject);
+            Debug.Log(spawnerLevel);
+        }
+    }*/
+
 }

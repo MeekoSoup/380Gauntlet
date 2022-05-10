@@ -830,6 +830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  inventoryItem: {fileID: 6028963542542272552, guid: a0db05f549b9a2048af9264d929c130e, type: 3}
 --- !u!54 &1976046831
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -60,7 +60,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyToSpawn: {fileID: 8699867346849884255, guid: 245e9deb6a6bcf245963aa7cd816aa22, type: 3}
   spawnDelay: 10
-  enemyLevel: 3
+  spawnerLevel: 3
+  isBones: 0
 --- !u!1 &145973035413351030
 GameObject:
   m_ObjectHideFlags: 0
