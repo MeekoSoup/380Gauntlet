@@ -30,6 +30,7 @@ public class EnemyProjectile : MonoBehaviour
         {
             _player = other.GetComponent<ShortController>();
             _player.health -= enemy.enemyDamage;
+
             if (enemy.isProjectile)
                 Destroy(this.gameObject);
         }

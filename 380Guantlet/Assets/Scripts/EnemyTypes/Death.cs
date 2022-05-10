@@ -9,11 +9,6 @@ public class Death : MonoBehaviour
     public GameObject player;
     private ShortController _player;
 
-    private EnemyStateContext _enemyStateContext;
-    private EnemyStartState _startState;
-    private EnemyStopState _stopState;
-    private EnemyAttackState _attackState;
-
     public bool isDrain;
     private int _drainedHealth;
 

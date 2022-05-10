@@ -6,6 +6,7 @@ public class ShortController : MonoBehaviour
 {
     public int health;
     private BaseEnemy _enemy;
+    public GameObject inventoryItem;
 
     void Start()
     {
