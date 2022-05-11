@@ -1,5 +1,4 @@
-﻿using System;
-using Control;
+﻿using Control;
 using Data;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,7 +14,7 @@ namespace Character
         public GameObject graphicsParent;
         public GameObject weaponParent;
 
-        private Weapon _weapon;
+        private IWeapon _weapon;
         private PlayerInput _playerInput;
 
         private void Awake()
@@ -33,9 +32,8 @@ namespace Character
         public void Attack()
         {
             if (!weaponParent) return;
-            if (!_weapon) _weapon = GetComponentInChildren<Weapon>();
-            if (!_weapon) return;
-            _weapon.Swing();
+            _weapon ??= _weapon = GetComponentInChildren<IWeapon>();
+            _weapon?.Attack();
         }
     }
 }

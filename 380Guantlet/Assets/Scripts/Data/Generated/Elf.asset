@@ -15,7 +15,7 @@ MonoBehaviour:
   role: 1
   heroName: Questor
   heroGraphics: {fileID: 2008317199974696, guid: 8abf717887ecb5a4b9ca6e1d5ca834f4, type: 3}
-  heroWeapon: {fileID: 0}
+  heroWeapon: {fileID: 3132616391193843936, guid: de09c9914230d8246a1e04135c7732db, type: 3}
   healthStarting: 0
   heroWeaponDamage: 0
   health: 0

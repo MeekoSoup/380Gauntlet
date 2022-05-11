@@ -3,20 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="a877f073-fd82-4f87-aec8-72cd970a20ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.380Guantlet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.380Guantlet/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Thor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Thor.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Weston_CCvEnemy.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Weston_CCvEnemy.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/ThorsHammer/ThorsHammer.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/ThorsHammer/ThorsHammer.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/ThorsHammer/ThorsHammer_Swing.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/ThorsHammer/ThorsHammer_Swing.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ThorsHammer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ThorsHammer.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/PlayerOverseer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/PlayerOverseer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Weapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Elf.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Elf.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Valkyrie.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Valkyrie.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Warrior.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Warrior.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Wizard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Wizard.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/BaseEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/BaseEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +84,7 @@
       <workItem from="1652226678953" duration="764000" />
       <workItem from="1652227659719" duration="3106000" />
       <workItem from="1652247471381" duration="5604000" />
+      <workItem from="1652286161378" duration="1903000" />
     </task>
     <servers />
   </component>
