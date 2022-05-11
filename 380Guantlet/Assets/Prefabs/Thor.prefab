@@ -281,8 +281,8 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6491669354914933135}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 1779570155492429819}
   - component: {fileID: 6491669355692868418}
   - component: {fileID: 6348792186260992117}
+  - component: {fileID: 5446952613471665736}
   m_Layer: 0
   m_Name: ax
   m_TagString: Untagged
@@ -331,7 +332,7 @@ BoxCollider:
   m_GameObject: {fileID: 6491669355692868419}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.664361, y: 0.52057016, z: 0.33242846}
   m_Center: {x: -2.4793844, y: 1.7815752, z: -1.2300446}
@@ -367,9 +368,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Ax: {fileID: 6491669355692868419}
+  blaster: {fileID: 0}
   IsAttacking: 0
   CanAttack: 1
   AttackCoolDown: 1
+--- !u!114 &5446952613471665736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6491669355692868419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbb29aaec63ca294e85b4031b416b756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ax: {fileID: 6348792186260992117}
 --- !u!1 &7262026626562807517
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +492,6 @@ GameObject:
   - component: {fileID: 5148208483823048565}
   - component: {fileID: 5076748648571078484}
   - component: {fileID: 8395260695561325139}
-  - component: {fileID: 8395260695561325136}
   m_Layer: 0
   m_Name: Thor
   m_TagString: Untagged
@@ -514,6 +528,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802ade644bab28f44a00247961d1efe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  b: {fileID: 3008788751588049612, guid: 233ad49158ee2da448329441a62bd780, type: 3}
+  potion: 0
+  health: 0
+  lives: 0
+  bA: {fileID: 8395260695561325139}
+  IsAttacking: 0
+  CanAttack: 1
+  AttackCoolDown: 1
 --- !u!114 &5076748648571078484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,6 +593,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2e68fd7a-4d1b-4393-b45f-fd4f3a86a17c
     m_ActionName: Player/Attack[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8395260695561325139}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c1d3cc59-aa17-4e48-8f17-792fcd0ebfec
+    m_ActionName: Player/BonusAttack[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8395260695561325139}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnRotate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f5c6f7ee-3adb-4eda-bf7c-b4358ee52b97
+    m_ActionName: Player/Rotate[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -591,19 +645,9 @@ MonoBehaviour:
   speed: 6
   _maximumVelocity: 10
   _movementForce: 10
+  turnSpeed: 3
   timer: 0
   timerOn: 0
   wp: {fileID: 6348792186260992117}
---- !u!114 &8395260695561325136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8395260695561325138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbb29aaec63ca294e85b4031b416b756, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ax: {fileID: 6348792186260992117}
+  b: {fileID: 3008788751588049612, guid: 233ad49158ee2da448329441a62bd780, type: 3}
+  t: {fileID: 5148208483823048565}

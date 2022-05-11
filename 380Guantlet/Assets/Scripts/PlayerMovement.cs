@@ -9,8 +9,10 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] public float _maximumVelocity = 10f;
     [SerializeField] public float _movementForce = 10f;
-    
+
     private Vector2 m;
+
+    [SerializeField] public float turnSpeed = 3;
 
     [SerializeField] public float timer;
     [SerializeField] public bool timerOn;
@@ -18,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     //[SerializeField] public GameObject p, p1, p2;
 
     public Ax wp;
+    public Blaster b;
+    public Thor t;
 
     private void Awake()
     {
@@ -56,6 +60,26 @@ public class PlayerMovement : MonoBehaviour
             }*/
             timerOn = false;
         }
+    }
+
+    public void OnAttack(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            timerOn = true;
+            t.BonusAttack();
+            b.BlasterActive();
+        }
+        if (ctx.canceled)
+        {
+            timerOn = false;
+        }
+    }
+
+    public void OnRotate(InputAction.CallbackContext ctx)
+    {
+        float horizontal = Input.GetAxis("Mouse X");
+        transform.Rotate(horizontal * turnSpeed * Vector3.up, Space.World);
     }
 
     public void Timer()
