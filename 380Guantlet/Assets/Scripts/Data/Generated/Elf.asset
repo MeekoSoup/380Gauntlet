@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c53b2ffe21c4f2784e301e08d042b9b, type: 3}
-  m_Name: Player1
+  m_Name: Elf
   m_EditorClassIdentifier: 
   controllerID: 0
+  role: 1
+  heroName: Questor
   health: 0
   score: 0
   keys: 0

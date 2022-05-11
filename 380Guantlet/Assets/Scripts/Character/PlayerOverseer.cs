@@ -11,6 +11,7 @@ namespace Character
     {
         public EventNetwork eventNetwork;
         public PlayerRole role = PlayerRole.None;
+        public PlayerData playerData;
         private PlayerInput _playerInput;
 
         private void Awake()
@@ -20,8 +21,9 @@ namespace Character
 
         private void Start()
         {
-            Debug.Log($"{gameObject.name} has device ID: {_playerInput.devices[0].deviceId.ToString()}!");
+            // Debug.Log($"{gameObject.name} has device ID: {_playerInput.devices[0].deviceId.ToString()}!");
             PlayerManager.Instance.RegisterPlayer(_playerInput);
+            eventNetwork.OnPlayerJoined?.Invoke(_playerInput);
         }
     }
 }

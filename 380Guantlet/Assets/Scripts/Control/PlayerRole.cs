@@ -4,8 +4,8 @@
     {
         None,
         Elf,
-        Fighter,
-        Rogue,
         Valkyrie,
+        Warrior,
+        Wizard,
     }
 }
