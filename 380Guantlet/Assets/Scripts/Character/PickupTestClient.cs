@@ -1,6 +1,7 @@
 ﻿using System;
 using Data;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Character
 {
@@ -44,7 +45,7 @@ namespace Character
             GUI.Label(new Rect(0, 40, 500, 60), $"Score: {playerData.score}");
         }
 
-        private void NukeTest(PlayerData pd = null)
+        private void NukeTest(PlayerInput playerInput = null)
         {
             Debug.Log("Nuclear launch detected!");
         }

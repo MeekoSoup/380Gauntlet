@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Control;
+using UnityEngine;
 
 namespace Data
 {
@@ -13,6 +14,8 @@ namespace Data
     public class PlayerData : ScriptableObject
     {
         public int controllerID;
+        public PlayerRole role;
+        public string heroName;
         public int health;
         public int score;
         public int keys;
