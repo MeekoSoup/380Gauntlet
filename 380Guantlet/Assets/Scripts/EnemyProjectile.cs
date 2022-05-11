@@ -11,14 +11,14 @@ public class EnemyProjectile : MonoBehaviour
     protected ShortController _player;
     public bool canPassWalls;
 
-    private Transform playerTransform;
+    private Vector3 playerTransform;
 
     public void Awake()
     {
         
-        playerTransform = enemy.transform;
+        playerTransform = enemy.enemy.destination;
         _projectile = this.GetComponent<Rigidbody>();
-        _projectile.AddForce((playerTransform.position - transform.position).normalized * speed, ForceMode.VelocityChange);
+        _projectile.AddForce((playerTransform - transform.position).normalized * speed, ForceMode.VelocityChange);
         StartCoroutine(ProjectileDeath(deathTimer));
     }
 
