@@ -12,5 +12,6 @@ public class EnemyStartState : MonoBehaviour, IEnemyState
         //Debug.Log("Enemy Start State");
         baseEnemy.enemy.destination = baseEnemy.player.transform.position;
         baseEnemy.enemy.speed = 5;
+        Debug.Log("StartState");
     }
 }

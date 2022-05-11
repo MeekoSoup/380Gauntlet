@@ -12,7 +12,7 @@ public class BaseEnemy : MonoBehaviour
     public int enemyLevel;
     public int enemyDamage;
     public bool isAttacking;
-    public bool canBeHit;
+    public bool canBeHit = true;
     
     protected int damageOne;
     protected int damageTwo;
@@ -46,6 +46,7 @@ public class BaseEnemy : MonoBehaviour
 
         enemy.updateRotation = true;
         _enemyStateContext.Transition(_stopState);
+        this.GetComponent<Rigidbody>().maxAngularVelocity = 0;
     }
 
     private void OnEnable()

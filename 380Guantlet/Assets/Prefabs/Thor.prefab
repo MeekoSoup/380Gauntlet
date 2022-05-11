@@ -317,6 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventNetwork: {fileID: 0}
+  characterTransform: {fileID: 0}
   speed: 6
 --- !u!114 &8395260695561325136
 MonoBehaviour:
