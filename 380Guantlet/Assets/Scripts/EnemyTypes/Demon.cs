@@ -29,7 +29,7 @@ public class Demon : BaseEnemy
 
     public override void AttackPattern()
     {
-        if (enemy.remainingDistance > enemy.stoppingDistance && enemy.speed == 0)
+        if (enemy.remainingDistance > enemy.stoppingDistance)
         {
             _enemyStateContext.Transition(_startState);
         }
