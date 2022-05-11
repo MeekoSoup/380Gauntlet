@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c53b2ffe21c4f2784e301e08d042b9b, type: 3}
+  m_Name: Warrior
+  m_EditorClassIdentifier: 
+  controllerID: 0
+  role: 3
+  heroName: Thor
+  health: 0
+  score: 0
+  keys: 0
+  isHost: 0

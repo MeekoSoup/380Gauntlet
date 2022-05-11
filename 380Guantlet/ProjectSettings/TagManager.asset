@@ -4,7 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - DetectRadius
+  - Ghost
+  - Fireball
   - Enemy
+  - Item
+  - Exit
   layers:
   - Default
   - TransparentFX
