@@ -17,6 +17,7 @@ public class EnemyProjectile : MonoBehaviour
     {
         
         playerTransform = enemy.enemy.destination;
+        playerTransform.y += 1;
         _projectile = this.GetComponent<Rigidbody>();
         _projectile.AddForce((playerTransform - transform.position).normalized * speed, ForceMode.VelocityChange);
         StartCoroutine(ProjectileDeath(deathTimer));

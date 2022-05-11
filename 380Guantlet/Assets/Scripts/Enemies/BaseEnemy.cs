@@ -11,7 +11,7 @@ public class BaseEnemy : MonoBehaviour
     public bool isProjectile;
     public int enemyLevel;
     public int enemyDamage;
-    public bool isAttacking;
+    public bool isAttacking = false;
     public bool canBeHit = true;
     
     protected int damageOne;
@@ -82,7 +82,7 @@ public class BaseEnemy : MonoBehaviour
     private void UpdateDestination()
     {
         enemy.destination = player.transform.position;
-        if (enemy.remainingDistance <= enemy.stoppingDistance)
+        if (enemy.remainingDistance <= enemy.stoppingDistance && isAttacking)
         {
             _enemyStateContext.Transition(_attackState);
         }
@@ -120,7 +120,13 @@ public class BaseEnemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("DetectRadius"))
+        {
+            if (!isAttacking)
+                isAttacking = !isAttacking;
+
             _enemyStateContext.Transition(_startState);
+        }
+            
 
         /*if (other.gameObject.CompareTag("Weapon"))
             enemyLevel--;*/
