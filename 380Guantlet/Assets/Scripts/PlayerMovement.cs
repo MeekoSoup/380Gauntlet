@@ -5,41 +5,73 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 6f;
-    /*private Rigidbody rb;
-    * [SerializeField] private float _maximumVelocity = 10f;
-    * [SerializeField] private float _movementForce = 10f;
-    */
-    private Vector2 movementInput;
+    [SerializeField] public float speed = 6f;
+    
+    [SerializeField] public float _maximumVelocity = 10f;
+    [SerializeField] public float _movementForce = 10f;
+    
+    private Vector2 m;
 
-    /*private void Awake()
+    [SerializeField] public float timer;
+    [SerializeField] public bool timerOn;
+    //[SerializeField] public Transform sP;
+    //[SerializeField] public GameObject p, p1, p2;
+
+    public Ax wp;
+
+    private void Awake()
     {
-        rb = this.GetComponent<Rigidbody>();
-    }*/
+        timer = 0;
+    }
 
     private void Update()
     {
-        transform.Translate(new Vector3(movementInput.x, 0, movementInput.y) * speed * Time.deltaTime);
+        Move();
+        Timer();
     }
 
-    public void OnMove(InputAction.CallbackContext ct)
+    public void OnMove(InputAction.CallbackContext ctx)
     {
-        movementInput = ct.ReadValue<Vector2>();
+        m = ctx.ReadValue<Vector2>();
     }
 
-    /*void FixedUpdate()
+    public void Attack(InputAction.CallbackContext ctx)
     {
-        if (rb.velocity.magnitude >= _maximumVelocity)
-            return;
-        if (Input.GetKey(KeyCode.W))
-            rb.AddForce(_movementForce * transform.forward);
-        //-forward gives us backward
-        if (Input.GetKey(KeyCode.S))
-            rb.AddForce(_movementForce * -transform.forward);
-        if (Input.GetKey(KeyCode.D))
-            rb.AddForce(_movementForce * transform.right);
-        //-right gives us left
-        if (Input.GetKey(KeyCode.A))
-            rb.AddForce(_movementForce * -transform.right);
-    }*/
+        if (ctx.performed)
+        {
+            timerOn = true;
+            wp.AxAttack();
+        }
+        if (ctx.canceled)
+        {
+            /*if (timer < 2)
+            {
+                p = Instantiate(p1, sP);
+                p.GetComponent<Rigidbody>().velocity = new Vector3(3, 0, 0);
+            }
+            else
+            {
+                p = Instantiate(p2, sP);
+                p.GetComponent<Rigidbody>().velocity = new Vector3(3, 0, 0);
+            }*/
+            timerOn = false;
+        }
+    }
+
+    public void Timer()
+    {
+        if (timerOn)
+        {
+            timer += Time.deltaTime;
+        }
+        else
+        {
+            timer = 0;
+        }
+    }
+
+    public void Move()
+    {
+        transform.Translate(new Vector3(m.x, 0, m.y) * speed * Time.deltaTime);
+    }
 }

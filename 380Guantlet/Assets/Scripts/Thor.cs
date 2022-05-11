@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Thor : MonoBehaviour
 {/*Description Notes:
@@ -10,4 +11,6 @@ public class Thor : MonoBehaviour
   * -disadvantage no magic and shots can't hit corners
   * -can only pickup keys
   */
+
+    
 }
