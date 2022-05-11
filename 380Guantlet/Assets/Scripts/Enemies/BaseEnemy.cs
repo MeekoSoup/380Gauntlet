@@ -1,3 +1,4 @@
+using Character;
 using Data;
 using UnityEngine;
 using UnityEngine.AI;
@@ -52,11 +53,21 @@ public class BaseEnemy : MonoBehaviour
     private void OnEnable()
     {
         eventNetwork.OnPlayerJoined += UpdatePlayer;
+        eventNetwork.OnPlayerUseNuke += NukeEnemy;
     }
 
     private void OnDisable()
     {
         eventNetwork.OnPlayerJoined -= UpdatePlayer;
+        eventNetwork.OnPlayerUseNuke -= NukeEnemy;
+    }
+
+    private void NukeEnemy(PlayerInput playerInput = null)
+    {
+        if (playerInput)
+            Debug.Log($"{playerInput.gameObject.name} just used a potion!");
+        
+        Release();
     }
 
     private void UpdatePlayer(PlayerInput playerInput = null)
@@ -127,14 +138,19 @@ public class BaseEnemy : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-            DamagePlayer();
+            DamagePlayer(other.gameObject);
             TakeDamage();
         }
     }
 
-    private void DamagePlayer()
+    private void DamagePlayer(GameObject playerObject)
     {
         // _player.health -= enemyDamage;
+        var po = playerObject.GetComponent<PlayerOverseer>();
+        if (po)
+        {
+            po.playerData.health -= enemyDamage * enemyLevel;
+        }
         eventNetwork.OnPlayerDamaged?.Invoke();
     }
 

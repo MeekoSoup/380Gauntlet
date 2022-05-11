@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afd2e912874d0be4ab9addad70597b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventNetwork: {fileID: 11400000, guid: a2f4d92285644e745bece6b797bbad48, type: 2}
   deathTimer: 0
   speed: 0
   enemy: {fileID: 1356843858888993172, guid: 4be8f2c51a4acd041b59f7e0dfad1bb1, type: 3}
+  canPassWalls: 0

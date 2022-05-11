@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 478611103041275705}
   - component: {fileID: 478611103041275707}
   - component: {fileID: -3004780744038673260}
+  - component: {fileID: 6530106714562921162}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -124,6 +125,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2e68fd7a-4d1b-4393-b45f-fd4f3a86a17c
     m_ActionName: Player/Attack[/XInputControllerWindows/rightShoulder,/Keyboard/space,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -3004780744038673260}
+        m_TargetAssemblyTypeName: Character.PlayerOverseer, Assembly-CSharp
+        m_MethodName: UsePotion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 80e778fa-4e40-4289-893c-e98f07f357fd
+    m_ActionName: Player/UsePotion[/Keyboard/shift,/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -144,8 +161,23 @@ MonoBehaviour:
   eventNetwork: {fileID: 11400000, guid: a2f4d92285644e745bece6b797bbad48, type: 2}
   role: 0
   playerData: {fileID: 0}
+  followCam: {fileID: 6812088492517778866, guid: f93abcf73a0bb484392380ceb6cc5736, type: 3}
   graphicsParent: {fileID: 2436662190493925718}
   weaponParent: {fileID: 6932735311669287334}
+--- !u!136 &6530106714562921162
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478611103041275711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1202207518201648332
 GameObject:
   m_ObjectHideFlags: 0

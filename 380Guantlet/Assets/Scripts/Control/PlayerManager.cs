@@ -25,6 +25,16 @@ namespace Control
             _remainingRoles.Add(PlayerRole.Warrior);
             _remainingRoles.Add(PlayerRole.Wizard);
             _remainingRoles.Add(PlayerRole.Valkyrie);
+
+            ResetPlayerData();
+        }
+
+        private void ResetPlayerData()
+        {
+            elf.Reset();
+            valkyrie.Reset();
+            warrior.Reset();
+            wizard.Reset();
         }
 
         public void RegisterPlayer(PlayerInput playerInput)
@@ -32,6 +42,7 @@ namespace Control
             if (!_playerInputs.Contains(playerInput))
             {
                 _playerInputs.Add(playerInput);
+                InstructionRemover.SetPlayerCount(_playerInputs.Count);
                 ChooseRole(playerInput);
                 MoveNearOtherPlayers(playerInput);
             }

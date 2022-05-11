@@ -16,8 +16,8 @@ MonoBehaviour:
   heroName: Thyra
   heroGraphics: {fileID: 2008317199974696, guid: d86ea6601b2e0f849b3e470afd2fbaa4, type: 3}
   heroWeapon: {fileID: 3132616391193843936, guid: de09c9914230d8246a1e04135c7732db, type: 3}
-  healthStarting: 0
-  heroWeaponDamage: 0
-  health: 0
+  healthStarting: 1000
+  health: 1000
   score: 0
   keys: 0
+  potions: 0

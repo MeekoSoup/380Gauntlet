@@ -19,10 +19,18 @@ namespace Data
         public GameObject heroGraphics;
         public GameObject heroWeapon;
         public float healthStarting;
-        public float heroWeaponDamage;
         [Header("Current Stats")]
         public float health;
         public int score;
         public int keys;
+        public int potions;
+
+        public void Reset()
+        {
+            health = healthStarting;
+            score = 0;
+            keys = 0;
+            potions = 0;
+        }
     }
 }
