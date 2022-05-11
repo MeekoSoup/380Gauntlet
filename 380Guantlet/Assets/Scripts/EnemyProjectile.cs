@@ -30,7 +30,7 @@ public class EnemyProjectile : MonoBehaviour
 
     public virtual void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             _player = other.GetComponent<ShortController>();
             _player.health -= enemy.enemyDamage;

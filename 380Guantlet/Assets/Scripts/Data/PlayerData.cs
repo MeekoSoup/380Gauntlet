@@ -13,12 +13,16 @@ namespace Data
     [CreateAssetMenu(fileName = "PlayerData", menuName = "Game/PlayerData", order = 51)]
     public class PlayerData : ScriptableObject
     {
-        public int controllerID;
+        [Header("Role Stats")]
         public PlayerRole role;
         public string heroName;
-        public int health;
+        public GameObject heroGraphics;
+        public GameObject heroWeapon;
+        public float healthStarting;
+        public float heroWeaponDamage;
+        [Header("Current Stats")]
+        public float health;
         public int score;
         public int keys;
-        public bool isHost;
     }
 }

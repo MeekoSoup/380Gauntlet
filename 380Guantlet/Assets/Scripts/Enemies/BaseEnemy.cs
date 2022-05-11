@@ -175,7 +175,7 @@ public class BaseEnemy : MonoBehaviour
         this.GetComponent<MeshRenderer>().material.color = enemyColor;
     }
 
-    protected virtual void TakeDamage()
+    public virtual void TakeDamage()
     {
         enemyLevel--;
         eventNetwork.OnEnemyDamaged?.Invoke();

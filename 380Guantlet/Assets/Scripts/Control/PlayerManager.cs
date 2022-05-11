@@ -78,19 +78,31 @@ namespace Control
                     break;
                 case PlayerRole.Elf:
                     overseer.playerData = elf;
+                    overseer.gameObject.AddComponent<Questor>();
                     break;
                 case PlayerRole.Valkyrie:
                     overseer.playerData = valkyrie;
+                    overseer.gameObject.AddComponent<Thyra>();
                     break;
                 case PlayerRole.Warrior:
                     overseer.playerData = warrior;
+                    overseer.gameObject.AddComponent<Thor>();
                     break;
                 case PlayerRole.Wizard:
                     overseer.playerData = wizard;
+                    overseer.gameObject.AddComponent<Merlin>();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            var playerData = overseer.playerData;
+            // setup graphics and weapon
+            if (overseer.graphicsParent && playerData.heroGraphics)
+                Instantiate(playerData.heroGraphics, overseer.graphicsParent.transform, false);
+
+            if (overseer.weaponParent && playerData.heroWeapon)
+                Instantiate(playerData.heroWeapon, overseer.weaponParent.transform, false);
 
             overseer.gameObject.name = overseer.playerData.heroName;
         }

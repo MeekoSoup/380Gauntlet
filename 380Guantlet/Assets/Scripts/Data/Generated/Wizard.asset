@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c53b2ffe21c4f2784e301e08d042b9b, type: 3}
   m_Name: Wizard
   m_EditorClassIdentifier: 
-  controllerID: 0
   role: 4
   heroName: Merlin
+  heroGraphics: {fileID: 2008317199974696, guid: 61760f49f9ac3174e826e3fe2757d492, type: 3}
+  heroWeapon: {fileID: 0}
+  healthStarting: 0
+  heroWeaponDamage: 0
   health: 0
   score: 0
   keys: 0
-  isHost: 0
