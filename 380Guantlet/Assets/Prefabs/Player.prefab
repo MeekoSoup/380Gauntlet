@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventNetwork: {fileID: 11400000, guid: a2f4d92285644e745bece6b797bbad48, type: 2}
   characterTransform: {fileID: 7274817598222125387}
-  speed: 6
+  speed: 12
 --- !u!114 &478611103041275707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +210,11 @@ MonoBehaviour:
   followCam: {fileID: 6812088492517778866, guid: f93abcf73a0bb484392380ceb6cc5736, type: 3}
   graphicsParent: {fileID: 2436662190493925718}
   weaponParent: {fileID: 6932735311669287334}
+  healthBarImage: {fileID: 0}
+  healthText: {fileID: 0}
+  keysText: {fileID: 0}
+  potionsText: {fileID: 0}
+  treasureText: {fileID: 0}
 --- !u!136 &6530106714562921162
 CapsuleCollider:
   m_ObjectHideFlags: 0
