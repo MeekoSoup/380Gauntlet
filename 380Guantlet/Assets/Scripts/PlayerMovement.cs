@@ -6,13 +6,11 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] public float speed = 6f;
-    
-    [SerializeField] public float _maximumVelocity = 10f;
-    [SerializeField] public float _movementForce = 10f;
+    [SerializeField] private bool _isMoving;
 
     private Vector2 m;
 
-    [SerializeField] public float turnSpeed = 3;
+    //[SerializeField] public float rot = 1f;
 
     [SerializeField] public float timer;
     [SerializeField] public bool timerOn;
@@ -26,17 +24,34 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         timer = 0;
+       /* m.x = m1.x;
+        m.z = m1.y;
+        if (_isMoving)
+        {
+            bool v = !(m1.x == 0 && m1.y == 0);
+        }*/
     }
 
     private void Update()
     {
         Move();
         Timer();
+        //handleRotation();
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
-        m = ctx.ReadValue<Vector2>();
+        if (ctx.performed)
+        {
+            m = ctx.ReadValue<Vector2>();
+            _isMoving = true;
+           
+        }
+
+        if (ctx.canceled)
+        {
+            _isMoving = false;
+        }
     }
 
     public void Attack(InputAction.CallbackContext ctx)
@@ -76,11 +91,25 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void OnRotate(InputAction.CallbackContext ctx)
+    //need to fix the rotation
+   /*public void handleRotation()
     {
-        float horizontal = Input.GetAxis("Mouse X");
-        transform.Rotate(horizontal * turnSpeed * Vector3.up, Space.World);
-    }
+        Vector3 pToLookAt;
+        //change in pos the player should look
+        pToLookAt.x = m.x;
+        pToLookAt.y = 0f;
+        pToLookAt.z = m.z;
+        //current rotation of the player
+        Quaternion currentRotation = transform.rotation;
+
+        if (!_isMoving)
+        {
+            //creates a new rotation based where the player is currently pressing
+            Quaternion targetRotation = Quaternion.LookRotation(pToLookAt);
+            transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, rot);
+        }
+       
+    }*/
 
     public void Timer()
     {
@@ -96,6 +125,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move()
     {
-        transform.Translate(new Vector3(m.x, 0, m.y) * speed * Time.deltaTime);
+        if (_isMoving)
+        {
+            transform.Translate(new Vector3(m.x, 0, m.y) * speed * Time.deltaTime);
+            GetComponent<Rigidbody>().velocity = m;
+        }
+            
     }
 }

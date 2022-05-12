@@ -10,8 +10,8 @@
                     "type": "Value",
                     "id": "d61f3055-cea4-4e4d-ab2d-8429ccd5ed85",
                     "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "Press"
+                    "processors": "NormalizeVector2",
+                    "interactions": ""
                 },
                 {
                     "name": "Attack",
@@ -25,14 +25,6 @@
                     "name": "BonusAttack",
                     "type": "Button",
                     "id": "c1d3cc59-aa17-4e48-8f17-792fcd0ebfec",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press"
-                },
-                {
-                    "name": "Rotate",
-                    "type": "Button",
-                    "id": "f5c6f7ee-3adb-4eda-bf7c-b4358ee52b97",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -146,28 +138,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "BonusAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a1df3052-fd99-49ec-80d4-8abf9dbf9b66",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "85cb5305-a79f-4c9c-9852-c705b2103284",
-                    "path": "<Keyboard>/q",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

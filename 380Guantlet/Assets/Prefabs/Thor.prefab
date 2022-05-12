@@ -492,6 +492,7 @@ GameObject:
   - component: {fileID: 5148208483823048565}
   - component: {fileID: 5076748648571078484}
   - component: {fileID: 8395260695561325139}
+  - component: {fileID: 3812884906743511190}
   m_Layer: 0
   m_Name: Thor
   m_TagString: Untagged
@@ -506,7 +507,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8395260695561325138}
-  m_LocalRotation: {x: -0, y: 0.9972508, z: -0, w: 0.07409995}
+  m_LocalRotation: {x: 0, y: 0.99725085, z: 0, w: 0.07409995}
   m_LocalPosition: {x: -2.3629763, y: 0.00000023841858, z: 1.0448644}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -609,22 +610,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c1d3cc59-aa17-4e48-8f17-792fcd0ebfec
     m_ActionName: Player/BonusAttack[/Keyboard/tab]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8395260695561325139}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: OnRotate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: f5c6f7ee-3adb-4eda-bf7c-b4358ee52b97
-    m_ActionName: Player/Rotate[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -643,11 +628,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  _maximumVelocity: 10
-  _movementForce: 10
-  turnSpeed: 3
+  _isMoving: 1
+  rot: 15
   timer: 0
   timerOn: 0
   wp: {fileID: 6348792186260992117}
   b: {fileID: 3008788751588049612, guid: 233ad49158ee2da448329441a62bd780, type: 3}
   t: {fileID: 5148208483823048565}
+--- !u!54 &3812884906743511190
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395260695561325138}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 36
+  m_CollisionDetection: 0

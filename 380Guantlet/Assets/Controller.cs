@@ -23,8 +23,8 @@ public class @Controller : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""d61f3055-cea4-4e4d-ab2d-8429ccd5ed85"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": ""Press""
+                    ""processors"": ""NormalizeVector2"",
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Attack"",
@@ -38,14 +38,6 @@ public class @Controller : IInputActionCollection, IDisposable
                     ""name"": ""BonusAttack"",
                     ""type"": ""Button"",
                     ""id"": ""c1d3cc59-aa17-4e48-8f17-792fcd0ebfec"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press""
-                },
-                {
-                    ""name"": ""Rotate"",
-                    ""type"": ""Button"",
-                    ""id"": ""f5c6f7ee-3adb-4eda-bf7c-b4358ee52b97"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press""
@@ -161,28 +153,6 @@ public class @Controller : IInputActionCollection, IDisposable
                     ""action"": ""BonusAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a1df3052-fd99-49ec-80d4-8abf9dbf9b66"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""85cb5305-a79f-4c9c-9852-c705b2103284"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -194,7 +164,6 @@ public class @Controller : IInputActionCollection, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_BonusAttack = m_Player.FindAction("BonusAttack", throwIfNotFound: true);
-        m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -247,7 +216,6 @@ public class @Controller : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_BonusAttack;
-    private readonly InputAction m_Player_Rotate;
     public struct PlayerActions
     {
         private @Controller m_Wrapper;
@@ -255,7 +223,6 @@ public class @Controller : IInputActionCollection, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @BonusAttack => m_Wrapper.m_Player_BonusAttack;
-        public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -274,9 +241,6 @@ public class @Controller : IInputActionCollection, IDisposable
                 @BonusAttack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBonusAttack;
                 @BonusAttack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBonusAttack;
                 @BonusAttack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBonusAttack;
-                @Rotate.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotate;
-                @Rotate.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotate;
-                @Rotate.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotate;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -290,9 +254,6 @@ public class @Controller : IInputActionCollection, IDisposable
                 @BonusAttack.started += instance.OnBonusAttack;
                 @BonusAttack.performed += instance.OnBonusAttack;
                 @BonusAttack.canceled += instance.OnBonusAttack;
-                @Rotate.started += instance.OnRotate;
-                @Rotate.performed += instance.OnRotate;
-                @Rotate.canceled += instance.OnRotate;
             }
         }
     }
@@ -302,6 +263,5 @@ public class @Controller : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnBonusAttack(InputAction.CallbackContext context);
-        void OnRotate(InputAction.CallbackContext context);
     }
 }

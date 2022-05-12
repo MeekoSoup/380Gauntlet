@@ -415,8 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  _maximumVelocity: 10
-  _movementForce: 10
+  _isMoving: 0
   timer: 0
   timerOn: 0
   wp: {fileID: 0}
