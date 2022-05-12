@@ -25,7 +25,8 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnEnemies(float seconds)
     {
-        Instantiate(enemyToSpawn, this.transform.position, this.transform.rotation);
+        Instantiate(enemyToSpawn, this.transform.position, this.transform.rotation, transform.parent);
+        //newEnemy.transform.parent = this.gameObject.transform;
         yield return new WaitForSeconds(seconds);
         StartCoroutine(SpawnEnemies(spawnDelay));
     }
