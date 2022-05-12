@@ -25,6 +25,16 @@ namespace Control
             _remainingRoles.Add(PlayerRole.Warrior);
             _remainingRoles.Add(PlayerRole.Wizard);
             _remainingRoles.Add(PlayerRole.Valkyrie);
+
+            ResetPlayerData();
+        }
+
+        private void ResetPlayerData()
+        {
+            elf.Reset();
+            valkyrie.Reset();
+            warrior.Reset();
+            wizard.Reset();
         }
 
         public void RegisterPlayer(PlayerInput playerInput)
@@ -32,6 +42,7 @@ namespace Control
             if (!_playerInputs.Contains(playerInput))
             {
                 _playerInputs.Add(playerInput);
+                InstructionRemover.SetPlayerCount(_playerInputs.Count);
                 ChooseRole(playerInput);
                 MoveNearOtherPlayers(playerInput);
             }
@@ -78,19 +89,31 @@ namespace Control
                     break;
                 case PlayerRole.Elf:
                     overseer.playerData = elf;
+                    overseer.gameObject.AddComponent<Questor>();
                     break;
                 case PlayerRole.Valkyrie:
                     overseer.playerData = valkyrie;
+                    overseer.gameObject.AddComponent<Thyra>();
                     break;
                 case PlayerRole.Warrior:
                     overseer.playerData = warrior;
+                    overseer.gameObject.AddComponent<Thor>();
                     break;
                 case PlayerRole.Wizard:
                     overseer.playerData = wizard;
+                    overseer.gameObject.AddComponent<Merlin>();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            var playerData = overseer.playerData;
+            // setup graphics and weapon
+            if (overseer.graphicsParent && playerData.heroGraphics)
+                Instantiate(playerData.heroGraphics, overseer.graphicsParent.transform, false);
+
+            if (overseer.weaponParent && playerData.heroWeapon)
+                Instantiate(playerData.heroWeapon, overseer.weaponParent.transform, false);
 
             overseer.gameObject.name = overseer.playerData.heroName;
         }

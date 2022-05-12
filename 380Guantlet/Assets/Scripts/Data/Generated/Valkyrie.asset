@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c53b2ffe21c4f2784e301e08d042b9b, type: 3}
   m_Name: Valkyrie
   m_EditorClassIdentifier: 
-  controllerID: 0
   role: 2
-  heroName: Thya
-  health: 0
+  heroName: Thyra
+  heroGraphics: {fileID: 2008317199974696, guid: d86ea6601b2e0f849b3e470afd2fbaa4, type: 3}
+  heroWeapon: {fileID: 3132616391193843936, guid: de09c9914230d8246a1e04135c7732db, type: 3}
+  healthStarting: 1000
+  health: 1000
   score: 0
   keys: 0
-  isHost: 0
+  potions: 0

@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyAttackState : MonoBehaviour, IEnemyState
 {
     private BaseEnemy _baseEnemy;
+    private Vector3 _newLook;
 
     public void Handle(BaseEnemy baseEnemy)
     {
@@ -11,7 +12,9 @@ public class EnemyAttackState : MonoBehaviour, IEnemyState
 
         baseEnemy.isAttacking = true;
         baseEnemy.enemy.updateRotation = true;
-        transform.LookAt(baseEnemy.player.transform);
+        _newLook = baseEnemy.player.transform.position;
+        _newLook.y += 1;
+        transform.LookAt(_newLook);
         baseEnemy.AttackPattern();
     }
 }

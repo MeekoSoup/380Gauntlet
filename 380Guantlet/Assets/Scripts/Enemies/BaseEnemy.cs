@@ -1,3 +1,4 @@
+using Character;
 using Data;
 using UnityEngine;
 using UnityEngine.AI;
@@ -11,8 +12,8 @@ public class BaseEnemy : MonoBehaviour
     public bool isProjectile;
     public int enemyLevel;
     public int enemyDamage;
-    public bool isAttacking;
-    public bool canBeHit;
+    public bool isAttacking = false;
+    public bool canBeHit = true;
     
     protected int damageOne;
     protected int damageTwo;
@@ -46,16 +47,27 @@ public class BaseEnemy : MonoBehaviour
 
         enemy.updateRotation = true;
         _enemyStateContext.Transition(_stopState);
+        this.GetComponent<Rigidbody>().maxAngularVelocity = 0;
     }
 
     private void OnEnable()
     {
         eventNetwork.OnPlayerJoined += UpdatePlayer;
+        eventNetwork.OnPlayerUseNuke += NukeEnemy;
     }
 
     private void OnDisable()
     {
         eventNetwork.OnPlayerJoined -= UpdatePlayer;
+        eventNetwork.OnPlayerUseNuke -= NukeEnemy;
+    }
+
+    private void NukeEnemy(PlayerInput playerInput = null)
+    {
+        if (playerInput)
+            Debug.Log($"{playerInput.gameObject.name} just used a potion!");
+        
+        Release();
     }
 
     private void UpdatePlayer(PlayerInput playerInput = null)
@@ -81,7 +93,7 @@ public class BaseEnemy : MonoBehaviour
     private void UpdateDestination()
     {
         enemy.destination = player.transform.position;
-        if (enemy.remainingDistance <= enemy.stoppingDistance)
+        if (enemy.remainingDistance <= enemy.stoppingDistance && isAttacking)
         {
             _enemyStateContext.Transition(_attackState);
         }
@@ -119,21 +131,32 @@ public class BaseEnemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("DetectRadius"))
+        {
+            if (!isAttacking)
+                isAttacking = !isAttacking;
+
             _enemyStateContext.Transition(_startState);
+        }
+            
 
         /*if (other.gameObject.CompareTag("Weapon"))
             enemyLevel--;*/
 
         if (other.gameObject.CompareTag("Player"))
         {
-            DamagePlayer();
+            DamagePlayer(other.gameObject);
             TakeDamage();
         }
     }
 
-    private void DamagePlayer()
+    private void DamagePlayer(GameObject playerObject)
     {
         // _player.health -= enemyDamage;
+        var po = playerObject.GetComponent<PlayerOverseer>();
+        if (po)
+        {
+            po.playerData.health -= enemyDamage * enemyLevel;
+        }
         eventNetwork.OnPlayerDamaged?.Invoke();
     }
 
@@ -175,7 +198,7 @@ public class BaseEnemy : MonoBehaviour
         this.GetComponent<MeshRenderer>().material.color = enemyColor;
     }
 
-    protected virtual void TakeDamage()
+    public virtual void TakeDamage()
     {
         enemyLevel--;
         eventNetwork.OnEnemyDamaged?.Invoke();
