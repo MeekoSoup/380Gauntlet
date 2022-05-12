@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581d201d884cab04a98fcfe50aab587a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventNetwork: {fileID: 11400000, guid: a2f4d92285644e745bece6b797bbad48, type: 2}
   deathTimer: 0
   speed: 0
   enemy: {fileID: 0}
