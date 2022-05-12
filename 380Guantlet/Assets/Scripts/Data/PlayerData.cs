@@ -19,6 +19,8 @@ namespace Data
         public GameObject heroGraphics;
         public GameObject heroWeapon;
         public float healthStarting;
+        public float speed = 12;
+
         [Header("Current Stats")]
         public float health;
         public int score;

@@ -115,6 +115,9 @@ namespace Control
             if (overseer.weaponParent && playerData.heroWeapon)
                 Instantiate(playerData.heroWeapon, overseer.weaponParent.transform, false);
 
+            var playerMovement = overseer.GetComponent<PlayerMovement>();
+            playerMovement.speed = playerData.speed;
+
             overseer.gameObject.name = overseer.playerData.heroName;
         }
     }

@@ -18,7 +18,7 @@ namespace Camera
         
         private Vector3 _velocity = Vector3.zero;
 
-        private void LateUpdate()
+        private void FixedUpdate()
         {
             Vector3 desiredPosition = target.position + offset;
             transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref _velocity, smoothSpeed);

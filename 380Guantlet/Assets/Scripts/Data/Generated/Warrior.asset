@@ -17,7 +17,8 @@ MonoBehaviour:
   heroGraphics: {fileID: 2008317199974696, guid: 3225d9802bdfe8849a26bd7ede664f30, type: 3}
   heroWeapon: {fileID: 3132616391193843936, guid: de09c9914230d8246a1e04135c7732db, type: 3}
   healthStarting: 1000
-  health: 894
+  speed: 12
+  health: 1000
   score: 0
-  keys: 0
+  keys: 1
   potions: 0

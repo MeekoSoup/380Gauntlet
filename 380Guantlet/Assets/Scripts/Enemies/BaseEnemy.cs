@@ -1,5 +1,6 @@
 using Character;
 using Data;
+using Enemies;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -34,8 +35,8 @@ public class BaseEnemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
         // _player = player.GetComponent<ShortController>();
-        enemyMat = this.GetComponent<MeshRenderer>().material;
-        enemyColor = this.GetComponent<MeshRenderer>().material.color;
+        // enemyMat = this.GetComponent<MeshRenderer>().material;
+        // enemyColor = this.GetComponent<MeshRenderer>().material.color;
         
         enemy.speed = 0;
 
@@ -168,34 +169,38 @@ public class BaseEnemy : MonoBehaviour
 
     protected void LevelCheck()
     {
-        int number = enemyLevel;
-
         if (enemyLevel <= 0)
         {
             Release();
             return;
         }
-        
 
+        int number = enemyLevel;
+        var appearance = GetComponent<EnemyAppearanceController>();
+        Color color = Color.white;
+        
         switch (number)
         {
             case 1:
                 enemyDamage = damageOne;
-                enemyColor.a = 0.7f;
+                color.a = .7f;
                 break;
             case 2:
                 enemyDamage = damageTwo;
-                enemyColor.a = 0.85f;
+                color.a = .85f;
                 break;
             case 3:
                 enemyDamage = damageThree;
-                enemyColor.a = 1.0f;
+                color.a = 1f;
                 break;
             default:
                 break;
         }
-
-        this.GetComponent<MeshRenderer>().material.color = enemyColor;
+        
+        if (appearance)
+            appearance.SetAlpha(color.a);
+        
+        // this.GetComponent<MeshRenderer>().material.color = enemyColor;
     }
 
     public virtual void TakeDamage()

@@ -18,8 +18,10 @@ public class EnemyProjectile : MonoBehaviour
 
     public void Awake()
     {
+        if (enemy)
+            if (enemy.enemy)
+                playerTransform = enemy.enemy.destination;
         
-        playerTransform = enemy.enemy.destination;
         playerTransform.y += 1;
         _projectile = this.GetComponent<Rigidbody>();
         _projectile.AddForce((playerTransform - transform.position).normalized * speed, ForceMode.VelocityChange);
@@ -34,6 +36,13 @@ public class EnemyProjectile : MonoBehaviour
 
     public virtual void OnTriggerEnter(Collider other)
     {
+        CheckContact(other);
+    }
+
+    protected void CheckContact(Collider other)
+    {
+        if (!enemy) return;
+        
         PlayerOverseer po = other.GetComponent<PlayerOverseer>();
         if (po)
         {
