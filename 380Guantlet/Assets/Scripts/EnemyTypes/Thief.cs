@@ -15,7 +15,7 @@ public class Thief : MonoBehaviour
     private void Awake()
     {
         exit = GameObject.FindGameObjectWithTag("Exit").transform.position;
-        enemy = GetComponent<NavMeshAgent>();
+        enemy = this.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         _player = player.GetComponent<ShortController>();
 

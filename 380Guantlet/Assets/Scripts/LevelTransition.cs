@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.AI;
 
 public class LevelTransition : MonoBehaviour
 {
-    public GameObject level1;
-    public GameObject level2;
-
-    public string nextLevel;
+    public GameObject currentLevel;
+    public GameObject nextLevel;
 
     private float spawnOffset = 0;
     private List<GameObject> _players = new List<GameObject>();
+
+
+    private void OnEnable()
+    {
+        NavMeshBuilder.ClearAllNavMeshes();
+        NavMeshBuilder.BuildNavMesh();
+    }
 
     private void OnGUI()
     {
@@ -27,16 +33,22 @@ public class LevelTransition : MonoBehaviour
             _players.Add(player);
         }
 
-        if(nextLevel == "Level2")
-        {
-            level1.SetActive(false);
-            level2.SetActive(true);
-        }
+        currentLevel.SetActive(false);
+        nextLevel.SetActive(true);
+        
+        /*NavMeshBuilder.ClearAllNavMeshes();
+        NavMeshBuilder.BuildNavMesh();*/
 
         foreach (GameObject player in _players)
         {
             player.transform.position = new Vector3(spawnOffset, 0, 0);
-            spawnOffset++;
+            spawnOffset+=2;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+            LevelChange();
     }
 }
