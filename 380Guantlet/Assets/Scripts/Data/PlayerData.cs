@@ -16,9 +16,12 @@ namespace Data
         [Header("Role Stats")]
         public PlayerRole role;
         public string heroName;
+        public Sprite heroPortrait;
         public GameObject heroGraphics;
         public GameObject heroWeapon;
         public float healthStarting;
+        public float speed = 12;
+
         [Header("Current Stats")]
         public float health;
         public int score;

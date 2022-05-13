@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   role: 1
   heroName: Questor
+  heroPortrait: {fileID: -6384997824617104057, guid: 36ecea50f6c440b4bb0f7e1dc4aaa802, type: 3}
   heroGraphics: {fileID: 2008317199974696, guid: 8abf717887ecb5a4b9ca6e1d5ca834f4, type: 3}
-  heroWeapon: {fileID: 3132616391193843936, guid: de09c9914230d8246a1e04135c7732db, type: 3}
-  healthStarting: 1000
-  health: 1000
+  heroWeapon: {fileID: 3811223835249444005, guid: bd7e58a7279e7cc41a56c23d583d3595, type: 3}
+  healthStarting: 400
+  speed: 15
+  health: 0
   score: 0
   keys: 0
   potions: 0

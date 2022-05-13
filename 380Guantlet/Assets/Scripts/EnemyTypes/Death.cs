@@ -1,13 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Character;
+using Data;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 public class Death : MonoBehaviour
 {
+    public EventNetwork eventNetwork;
     public NavMeshAgent enemy;
     public GameObject player;
-    private ShortController _player;
+    private PlayerOverseer _player;
 
     public bool isDrain;
     private int _drainedHealth;
@@ -18,13 +23,35 @@ public class Death : MonoBehaviour
     private void Awake()
     {
         enemy = GetComponent<NavMeshAgent>();
-        player = GameObject.FindGameObjectWithTag("Player");
-        _player = player.GetComponent<ShortController>();
+        AcquireTarget();
 
         enemy.speed = 0;
 
         deathPointsLevel = 0;
         DeathPointsCheck();
+    }
+
+    private void OnEnable()
+    {
+        eventNetwork.OnPlayerJoined += AcquireTarget;
+        eventNetwork.OnPlayerKilled += AcquireTarget;
+        eventNetwork.OnPlayerDisconnect += AcquireTarget;
+        eventNetwork.OnLevelLoad += AcquireTarget;
+    }
+
+    private void OnDisable()
+    {
+        eventNetwork.OnPlayerJoined -= AcquireTarget;
+        eventNetwork.OnPlayerKilled -= AcquireTarget;
+        eventNetwork.OnPlayerDisconnect -= AcquireTarget;
+        eventNetwork.OnLevelLoad -= AcquireTarget;
+    }
+
+    private void AcquireTarget(PlayerInput playerInput = null)
+    {
+        
+        player = GameObject.FindGameObjectWithTag("Player");
+        _player = player.GetComponent<PlayerOverseer>();
     }
 
     private void Update()
@@ -38,19 +65,19 @@ public class Death : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "DetectRadius")
+        if (other.CompareTag("DetectRadius"))
             enemy.speed = 5;
 
-        if (other.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             isDrain = true;
             StartCoroutine(DeathAttack());
         }
 
-        if (other.gameObject.tag == "Weapon")
+        if (other.CompareTag("Weapon"))
             DeathPointsCheck();
 
-        if (other.gameObject.tag == "Potion")
+        if (other.CompareTag("Potion"))
         {
             Destroy(this.gameObject);
         }
@@ -58,14 +85,15 @@ public class Death : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
             isDrain = false;
     }
 
     IEnumerator DeathAttack()
     {        
         _drainedHealth += 5;
-        _player.health -= 5;
+        if (_player)
+            _player.playerData.health -= 5;
         yield return new WaitForSeconds(0.1f);
         if (isDrain)
             StartCoroutine(DeathAttack());

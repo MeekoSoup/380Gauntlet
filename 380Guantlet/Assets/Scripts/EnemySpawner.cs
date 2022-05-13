@@ -5,12 +5,14 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyToSpawn;
-    public float spawnDelay;
+    public float spawnDelay = 10;
     private BaseEnemy _baseEnemy;
 
     [Range(1, 3)]
     public int spawnerLevel;
     public bool isBones;
+    private int _spawnLimit = 10;
+    private int _spawnAmount;
 
     private void Awake()
     {
@@ -25,8 +27,17 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnEnemies(float seconds)
     {
-        Instantiate(enemyToSpawn, this.transform.position, this.transform.rotation);
+        Instantiate(enemyToSpawn, this.transform.position, this.transform.rotation, transform.parent);
+        //newEnemy.transform.parent = this.gameObject.transform;
+        _spawnAmount++;
         yield return new WaitForSeconds(seconds);
+        
+        if(_spawnAmount <= _spawnLimit)
+        {
+            spawnDelay = spawnDelay * 2;
+            _spawnAmount = 0;
+        }
+            
         StartCoroutine(SpawnEnemies(spawnDelay));
     }
 

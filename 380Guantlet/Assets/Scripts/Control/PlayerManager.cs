@@ -4,6 +4,7 @@ using Character;
 using Data;
 using General;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
@@ -12,6 +13,7 @@ namespace Control
     public class PlayerManager : Singleton<PlayerManager>
     {
         public EventNetwork eventNetwork;
+        public UnityEvent onTeamDeath;
         public PlayerData elf;
         public PlayerData valkyrie;
         public PlayerData warrior;
@@ -21,12 +23,22 @@ namespace Control
 
         public override void Awake()
         {
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            _playerInputs.Clear();
+            _remainingRoles.Clear();
+            
             _remainingRoles.Add(PlayerRole.Elf);
             _remainingRoles.Add(PlayerRole.Warrior);
             _remainingRoles.Add(PlayerRole.Wizard);
             _remainingRoles.Add(PlayerRole.Valkyrie);
 
             ResetPlayerData();
+            
+            // InstructionRemover.SetPlayerCount(0);
         }
 
         private void ResetPlayerData()
@@ -48,6 +60,27 @@ namespace Control
             }
         }
 
+        public void UnregisterPlayer(PlayerInput playerInput)
+        {
+            if (_playerInputs.Contains(playerInput))
+            {
+                PlayerRole role = GetPlayerRole(playerInput);
+                _playerInputs.Remove(playerInput);
+                _remainingRoles.Add(role);
+                CheckPlayerCount();
+            }
+        }
+
+        private void CheckPlayerCount()
+        {
+            if (_playerInputs.Count <= 0)
+            {
+                InstructionRemover.SetPlayerCount(0);
+                Initialize();
+                onTeamDeath?.Invoke();
+            }
+        }
+
         private void MoveNearOtherPlayers(PlayerInput playerInput)
         {
             var go = playerInput.gameObject;
@@ -59,15 +92,6 @@ namespace Control
 
             var pos = playerInput.transform.position;
             playerInput.transform.position = new Vector3(bounds.center.x, pos.y, bounds.center.y);
-        }
-
-        public void UnregisterPlayer(PlayerInput playerInput)
-        {
-            if (_playerInputs.Contains(playerInput))
-            {
-                PlayerRole role = GetPlayerRole(playerInput);
-                _playerInputs.Remove(playerInput);
-            }
         }
 
         private PlayerRole GetPlayerRole(PlayerInput playerInput)
@@ -115,7 +139,29 @@ namespace Control
             if (overseer.weaponParent && playerData.heroWeapon)
                 Instantiate(playerData.heroWeapon, overseer.weaponParent.transform, false);
 
+            var playerMovement = overseer.GetComponent<PlayerMovement>();
+            playerMovement.speed = playerData.speed;
+
             overseer.gameObject.name = overseer.playerData.heroName;
+        }
+
+        public GameObject GetNearestPlayer(Transform origin)
+        {
+            GameObject closestPlayer = null;
+            float shortestDist = float.MaxValue;
+            float dist = 0;
+
+            foreach (var playerInput in _playerInputs)
+            {
+                dist = Vector3.Distance(origin.position, playerInput.transform.position);
+                if (dist < shortestDist)
+                {
+                    shortestDist = dist;
+                    closestPlayer = playerInput.gameObject;
+                }
+            }
+
+            return closestPlayer;
         }
     }
 }

@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 478611103041275707}
   - component: {fileID: -3004780744038673260}
   - component: {fileID: 6530106714562921162}
+  - component: {fileID: -8394201626240938126}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -98,7 +99,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &478611103041275705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,9 +112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0214bdde2db9e69479e0e30bf8c3c456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 12
   eventNetwork: {fileID: 11400000, guid: a2f4d92285644e745bece6b797bbad48, type: 2}
   characterTransform: {fileID: 7274817598222125387}
-  speed: 12
+  checkDistance: 0.5
+  wallFilter:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &478611103041275707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +229,20 @@ CapsuleCollider:
   m_GameObject: {fileID: 478611103041275711}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!136 &-8394201626240938126
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478611103041275711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2

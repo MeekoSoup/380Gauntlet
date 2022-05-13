@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8699867346849884248}
   - component: {fileID: 8699867346849884249}
   - component: {fileID: 8699867346849884254}
+  - component: {fileID: 6017123778110551409}
   m_Layer: 0
   m_Name: Demon
   m_TagString: Enemy
@@ -153,9 +154,23 @@ MonoBehaviour:
   enemy: {fileID: 0}
   player: {fileID: 0}
   isProjectile: 0
-  enemyLevel: 0
+  enemyLevel: 3
   enemyDamage: 0
   isAttacking: 0
   canBeHit: 0
   biteGO: {fileID: 6028963542542272552, guid: f4e7d26d424ee0248b9038816d74ac09, type: 3}
   fireballGO: {fileID: 9189276133914474540, guid: c7bbb2800809a71419218593e0342ec9, type: 3}
+--- !u!114 &6017123778110551409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8699867346849884255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc1b16630134f608d66607671df8fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers:
+  - {fileID: 8699867346849884250}

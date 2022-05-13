@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4402233460873648043}
   - component: {fileID: 4402233460873648040}
   - component: {fileID: 4402233460873648041}
+  - component: {fileID: 5024832977831409633}
   m_Layer: 0
   m_Name: Lobber
   m_TagString: Ghost
@@ -158,3 +159,17 @@ MonoBehaviour:
   isAttacking: 0
   canBeHit: 0
   rockGO: {fileID: 29559505861792339, guid: ecdbdacd9a5dd5b4a8e0388c03b3012f, type: 3}
+--- !u!114 &5024832977831409633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4402233460873648038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc1b16630134f608d66607671df8fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers:
+  - {fileID: 4402233460873648045}

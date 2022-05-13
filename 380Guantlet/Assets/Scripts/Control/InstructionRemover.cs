@@ -7,6 +7,11 @@ public class InstructionRemover : Singleton<InstructionRemover>
 
     public static void SetPlayerCount(int players)
     {
+        for (int j = 0; j < 4; j++)
+        {
+            if (Instance.elements[j])
+                Instance.elements[j].SetActive(true);
+        }
         // Turn off elements in order for each active player
         int i = 0;
         for (; i < players; i++)
@@ -15,10 +20,10 @@ public class InstructionRemover : Singleton<InstructionRemover>
                 Instance.elements[i].SetActive(false);
         }
         // turn it back on for all the rest
-        for (int j = i; j < 4; j++)
-        {
-            if (Instance.elements[j])
-                Instance.elements[j].SetActive(true);
-        }
+        // for (int j = i; j < 4; j++)
+        // {
+        //     if (Instance.elements[j])
+        //         Instance.elements[j].SetActive(true);
+        // }
     }
 }
