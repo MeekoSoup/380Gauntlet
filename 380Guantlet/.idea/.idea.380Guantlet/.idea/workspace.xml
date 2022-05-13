@@ -3,59 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="a877f073-fd82-4f87-aec8-72cd970a20ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.380Guantlet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.380Guantlet/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/ThorsHammer/ThorsHammer_Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/ThorsHammer/ThorsHammer_Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/ThorsHammer/ThorsHammer_Swing.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/ThorsHammer/ThorsHammer_Swing.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/gauntlet_large_1331178193.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/gauntlet_large_1331178193.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/purple_metal.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/purple_metal.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/skin.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/skin.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/ThorsHammer.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/ThorsHammer.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Thief.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Thief.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyProjectilePrefabs/Treasure.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyProjectilePrefabs/Treasure.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Interactables/Key.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Interactables/Key.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EX.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EX.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gameplay.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/JakeWorkScene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/JakeWorkScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/JakeWorkScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/JakeWorkScene/NavMesh.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/JakeWorkScene/NavMesh.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level1.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Weston_CCvEnemy 1.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Weston_CCvEnemy 1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Weston_CCvEnemy 1.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Weston_CCvEnemy 1/Global Volume Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Weston_CCvEnemy 1/Global Volume Profile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Weston_CCvEnemy 1/NavMesh.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Weston_CCvEnemy 1/NavMesh.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Weston_CCvEnemy.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Weston_CCvEnemy.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Weston_CCvEnemy.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Weston_CCvEnemy/NavMesh.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Weston_CCvEnemy/NavMesh.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Weston_CameraTest.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Weston_CameraTest.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Weston_PickupTest.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Weston_PickupTest.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/PlayerOverseer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/PlayerOverseer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/InstructionRemover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/InstructionRemover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/EventNetwork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/EventNetwork.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/QuestorsWeapon/QuestorsWeapon.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/QuestorsWeapon/QuestorsWeapon.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/QuestorsWeapon/bowAndArrow.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/QuestorsWeapon/bowAndArrow.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/QuestorsWeapon/bowAndArrowGraphic.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/QuestorsWeapon/bowAndArrowGraphic.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/OfficialScenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/OfficialScenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/OfficialScenes/Game/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/OfficialScenes/Game/NavMesh.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Elf.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Elf.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Valkyrie.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Valkyrie.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Warrior.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Warrior.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Wizard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Wizard.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyTypes/Thief.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyTypes/Thief.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelTransition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelTransition.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +90,7 @@
       <workItem from="1652247471381" duration="5604000" />
       <workItem from="1652286161378" duration="1903000" />
       <workItem from="1652295173123" duration="18468000" />
+      <workItem from="1652434467047" duration="754000" />
     </task>
     <servers />
   </component>

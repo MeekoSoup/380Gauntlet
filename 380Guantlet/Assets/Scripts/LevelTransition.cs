@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using Data;
 using UnityEngine;
-using UnityEditor.AI;
 
 public class LevelTransition : MonoBehaviour
 {
@@ -16,8 +14,8 @@ public class LevelTransition : MonoBehaviour
 
     private void OnEnable()
     {
-        NavMeshBuilder.ClearAllNavMeshes();
-        NavMeshBuilder.BuildNavMesh();
+        // NavMeshBuilder.ClearAllNavMeshes();
+        // NavMeshBuilder.BuildNavMesh();
     }
 
     // private void OnGUI()
@@ -51,7 +49,7 @@ public class LevelTransition : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
             LevelChange();
     }
 }
