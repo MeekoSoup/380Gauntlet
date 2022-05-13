@@ -25,7 +25,7 @@ namespace Misc
                     ""type"": ""Value"",
                     ""id"": ""d61f3055-cea4-4e4d-ab2d-8429ccd5ed85"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""processors"": ""NormalizeVector2"",
                     ""interactions"": """"
                 },
                 {

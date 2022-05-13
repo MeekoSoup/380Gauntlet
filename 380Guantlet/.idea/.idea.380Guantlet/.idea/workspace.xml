@@ -1,74 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a877f073-fd82-4f87-aec8-72cd970a20ff" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.380Guantlet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.380Guantlet/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/HealthBar.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/HealthBar/HealthBar.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/HealthBar/HealthBar.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/HealthBar/HealthBarBackground.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/HealthBar/HealthBarBackground.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/Ground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/Ground.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/TestHealthPickup.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/TestHealthPickup.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/TestPlayer.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/TestPlayer.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/Projectiles/bite_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/Projectiles/bite_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/Projectiles/club_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/Projectiles/club_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/Projectiles/inventoryitem_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/Projectiles/inventoryitem_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/Projectiles/rock_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/Projectiles/rock_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/Projectiles/spell_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/Projectiles/spell_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/Projectiles/steal_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/Projectiles/steal_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/death_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/death_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/default_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/default_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/demon_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/demon_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/fireball_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/fireball_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/ghost_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/ghost_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/grunt_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/grunt_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/lobber_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/lobber_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/sorcerer_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/sorcerer_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/thief_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/thief_mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/blue.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/brown.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/brown.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/gold.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/gold.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/gray.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/gray.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/green.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/purple.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/purple.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/red.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/red.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/skin.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/skin.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/terrain.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/terrain.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/ThorsHammer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/ThorsHammer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Demon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Demon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Ghost.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Ghost.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Grunt.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Grunt.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Lobber.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Lobber.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Sorcerer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Sorcerer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Thief.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Thief.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SmoothCamera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SmoothCamera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/DemonSpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/DemonSpawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/GhostSpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/GhostSpawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/GruntSpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/GruntSpawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/LobberSpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/LobberSpawner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Weston_CCvEnemy 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Weston_CCvEnemy 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Weston_CCvEnemy 1/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Weston_CCvEnemy 1/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Weston_CCvEnemy 1/NavMesh.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Weston_CCvEnemy 1/NavMesh.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Elf.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Elf.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Valkyrie.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Valkyrie.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Warrior.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Warrior.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Wizard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Wizard.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/PlayerData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/BaseEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/BaseEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fireball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="a877f073-fd82-4f87-aec8-72cd970a20ff" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
