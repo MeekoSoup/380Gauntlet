@@ -8,7 +8,7 @@ public class AttackEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy" && ax.IsAttacking)
+        if (other.tag == "Enemy")
         {
             Debug.Log("Attacked!!");
         }

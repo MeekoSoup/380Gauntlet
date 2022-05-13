@@ -5,7 +5,8 @@ using UnityEngine;
 public class Ax : MonoBehaviour
 {
     public GameObject _Ax;
-    
+    public GameObject blaster;
+
     public bool IsAttacking = false;
     public bool CanAttack = true;
     public float AttackCoolDown = 1.0f;
