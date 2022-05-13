@@ -37,6 +37,7 @@ namespace Data
         public PlayerEvent OnPlayerUseNuke;
         public PlayerEvent OnPlayerDeathChant;
         public PlayerEvent OnLevelLoad;
+        public PlayerEvent OnThiefStealsPotion;
 
         // should probably be overloaded with a parameter for the enemy controller
         public delegate void EnemyEvent();

@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventNetwork: {fileID: 11400000, guid: a2f4d92285644e745bece6b797bbad48, type: 2}
   healthMod: 0
-  scoreMod: 0
+  scoreMod: 25
   isNuke: 0
   isKey: 1
 --- !u!1 &6139278846186314270

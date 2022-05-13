@@ -29,8 +29,12 @@ namespace Character
         public TMP_Text potionsText;
         public TMP_Text treasureText;
 
+        [Header("Inventory Properties")]
+        public GameObject potionPrefab;
+        
         private IWeapon _weapon;
         private PlayerInput _playerInput;
+
         // private bool _coinStarted;
 
         private void Awake()

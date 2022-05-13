@@ -4,6 +4,7 @@ using Character;
 using Data;
 using General;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
@@ -12,6 +13,7 @@ namespace Control
     public class PlayerManager : Singleton<PlayerManager>
     {
         public EventNetwork eventNetwork;
+        public UnityEvent onTeamDeath;
         public PlayerData elf;
         public PlayerData valkyrie;
         public PlayerData warrior;
@@ -21,12 +23,22 @@ namespace Control
 
         public override void Awake()
         {
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            _playerInputs.Clear();
+            _remainingRoles.Clear();
+            
             _remainingRoles.Add(PlayerRole.Elf);
             _remainingRoles.Add(PlayerRole.Warrior);
             _remainingRoles.Add(PlayerRole.Wizard);
             _remainingRoles.Add(PlayerRole.Valkyrie);
 
             ResetPlayerData();
+            
+            // InstructionRemover.SetPlayerCount(0);
         }
 
         private void ResetPlayerData()
@@ -55,6 +67,17 @@ namespace Control
                 PlayerRole role = GetPlayerRole(playerInput);
                 _playerInputs.Remove(playerInput);
                 _remainingRoles.Add(role);
+                CheckPlayerCount();
+            }
+        }
+
+        private void CheckPlayerCount()
+        {
+            if (_playerInputs.Count <= 0)
+            {
+                InstructionRemover.SetPlayerCount(0);
+                Initialize();
+                onTeamDeath?.Invoke();
             }
         }
 

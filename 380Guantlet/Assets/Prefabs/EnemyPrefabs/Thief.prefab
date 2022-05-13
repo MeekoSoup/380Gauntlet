@@ -152,8 +152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exit: {x: 0, y: 0, z: 0}
   enemy: {fileID: 0}
-  player: {fileID: 0}
-  treasure: {fileID: 6028963542542272552, guid: 6649d97953012fa4a94eb83a2e7c51f2, type: 3}
+  treasurePrefab: {fileID: 8914232025821363931, guid: 086f001dd7f483443b648361556aa268, type: 3}
+  potionPrefab: {fileID: 802394968130099874, guid: 21944aae2a23eda42aa4ef0247d82418, type: 3}
+  dropItem: {fileID: 0}
 --- !u!114 &8709257825199364477
 MonoBehaviour:
   m_ObjectHideFlags: 0
