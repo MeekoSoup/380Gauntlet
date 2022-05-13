@@ -16,7 +16,8 @@ public class Fireball : EnemyProjectile
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            enemy.enemyLevel--;
+            if (enemy)
+                enemy.enemyLevel--;
         }
 
         if (other.gameObject.CompareTag("Item"))

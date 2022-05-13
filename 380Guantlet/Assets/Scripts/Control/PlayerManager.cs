@@ -48,6 +48,16 @@ namespace Control
             }
         }
 
+        public void UnregisterPlayer(PlayerInput playerInput)
+        {
+            if (_playerInputs.Contains(playerInput))
+            {
+                PlayerRole role = GetPlayerRole(playerInput);
+                _playerInputs.Remove(playerInput);
+                _remainingRoles.Add(role);
+            }
+        }
+
         private void MoveNearOtherPlayers(PlayerInput playerInput)
         {
             var go = playerInput.gameObject;
@@ -59,15 +69,6 @@ namespace Control
 
             var pos = playerInput.transform.position;
             playerInput.transform.position = new Vector3(bounds.center.x, pos.y, bounds.center.y);
-        }
-
-        public void UnregisterPlayer(PlayerInput playerInput)
-        {
-            if (_playerInputs.Contains(playerInput))
-            {
-                PlayerRole role = GetPlayerRole(playerInput);
-                _playerInputs.Remove(playerInput);
-            }
         }
 
         private PlayerRole GetPlayerRole(PlayerInput playerInput)
@@ -119,6 +120,25 @@ namespace Control
             playerMovement.speed = playerData.speed;
 
             overseer.gameObject.name = overseer.playerData.heroName;
+        }
+
+        public GameObject GetNearestPlayer(Transform origin)
+        {
+            GameObject closestPlayer = null;
+            float shortestDist = float.MaxValue;
+            float dist = 0;
+
+            foreach (var playerInput in _playerInputs)
+            {
+                dist = Vector3.Distance(origin.position, playerInput.transform.position);
+                if (dist < shortestDist)
+                {
+                    shortestDist = dist;
+                    closestPlayer = playerInput.gameObject;
+                }
+            }
+
+            return closestPlayer;
         }
     }
 }

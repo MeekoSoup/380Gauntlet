@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Data;
 using UnityEngine;
 using UnityEditor.AI;
 
 public class LevelTransition : MonoBehaviour
 {
+    public EventNetwork eventNetwork;
     public GameObject currentLevel;
     public GameObject nextLevel;
 
@@ -18,13 +20,13 @@ public class LevelTransition : MonoBehaviour
         NavMeshBuilder.BuildNavMesh();
     }
 
-    private void OnGUI()
-    {
-        if (GUI.Button(new Rect(10, 10, 150, 100), "ChangeLevel"))
-        {
-            LevelChange();
-        }
-    }
+    // private void OnGUI()
+    // {
+    //     if (GUI.Button(new Rect(10, 10, 150, 100), "ChangeLevel"))
+    //     {
+    //         LevelChange();
+    //     }
+    // }
 
     private void LevelChange()
     {
@@ -44,6 +46,7 @@ public class LevelTransition : MonoBehaviour
             player.transform.position = new Vector3(spawnOffset, 0, 0);
             spawnOffset+=2;
         }
+        eventNetwork.OnLevelLoad?.Invoke();
     }
 
     private void OnTriggerEnter(Collider other)
