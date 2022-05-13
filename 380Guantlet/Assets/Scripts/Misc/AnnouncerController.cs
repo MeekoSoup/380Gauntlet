@@ -17,7 +17,22 @@ namespace Misc
         private void OnEnable()
         {
             eventNetwork.OnThiefStealsPotion += ThiefStealsPotion;
+            eventNetwork.OnPlayerUseNuke += UsePotion;
             StartCoroutine(DisplayText(""));
+        }
+
+        private void UsePotion(PlayerInput playerInput = null)
+        {
+            if (playerInput)
+                StartCoroutine(DisplayText($"{playerInput.gameObject.name} used a Potion and nuked some enemies!"));
+            else
+                StartCoroutine(DisplayText($"Someone used a Potion and nuked some enemies!"));
+        }
+
+        private void OnDisable()
+        {
+            eventNetwork.OnThiefStealsPotion -= ThiefStealsPotion;
+            eventNetwork.OnPlayerUseNuke -= UsePotion;
         }
 
         private void ThiefStealsPotion(PlayerInput playerInput = null)

@@ -200,6 +200,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3811223836090982046}
     m_Modifications:
+    - target: {fileID: 1615084649819843751, guid: 8407b191db441224ab49d85571febdf2, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 3566324143008585776, guid: 8407b191db441224ab49d85571febdf2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.03652779

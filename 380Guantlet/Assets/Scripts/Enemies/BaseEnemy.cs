@@ -1,9 +1,12 @@
+using System;
 using Character;
+using Control;
 using Data;
 using Enemies;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class BaseEnemy : MonoBehaviour
 {
@@ -14,6 +17,7 @@ public class BaseEnemy : MonoBehaviour
     public int enemyLevel;
     public int enemyDamage;
     public bool isAttacking = false;
+    public int score = 10;
     public bool canBeHit = true;
     
     protected int damageOne;
@@ -65,10 +69,61 @@ public class BaseEnemy : MonoBehaviour
 
     private void NukeEnemy(PlayerInput playerInput = null)
     {
-        if (playerInput)
-            Debug.Log($"{playerInput.gameObject.name} just used a potion!");
+        Debug.Log($"{playerInput.gameObject.name} just used a potion!");
         
-        Release();
+        if (!playerInput)
+        {
+            Release();
+            return;
+        }
+
+        var dist = Vector3.Distance(transform.position, playerInput.transform.position);
+
+        var overseer = playerInput.GetComponent<PlayerOverseer>();
+        if (!overseer)
+        {
+            Release();
+            return;
+        }
+
+        overseer.playerData.score += score;
+        
+        var role = overseer.playerData.role;
+        switch (role)
+        {
+            case PlayerRole.None:
+                Debug.Log("What?");
+                break;
+            case PlayerRole.Elf:
+                TakeDamage();
+                if (dist < 20f)
+                {
+                    TakeDamage();
+                }
+                break;
+            case PlayerRole.Valkyrie:
+                if (dist < 20f)
+                {
+                    TakeDamage();
+                    TakeDamage();
+                }
+                break;
+            case PlayerRole.Warrior:
+                if (dist < 15f)
+                {
+                    TakeDamage();
+                }
+                break;
+            case PlayerRole.Wizard:
+                TakeDamage();
+                if (dist < 20f)
+                {
+                    Release();
+                }
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 
     private void UpdatePlayer(PlayerInput playerInput = null)

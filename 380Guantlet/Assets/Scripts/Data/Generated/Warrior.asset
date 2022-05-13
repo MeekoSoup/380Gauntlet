@@ -19,7 +19,7 @@ MonoBehaviour:
   heroWeapon: {fileID: 3132616391193843936, guid: de09c9914230d8246a1e04135c7732db, type: 3}
   healthStarting: 600
   speed: 12
-  health: 0
-  score: 0
+  health: 594
+  score: 150
   keys: 0
-  potions: 0
+  potions: 3

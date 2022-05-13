@@ -20,10 +20,18 @@ namespace Control
         public PlayerData wizard;
         private readonly List<PlayerInput> _playerInputs = new List<PlayerInput>();
         private List<PlayerRole> _remainingRoles = new List<PlayerRole>();
+        private bool _initialized;
 
         public override void Awake()
         {
-            Initialize();
+            if (!_initialized)
+                Initialize();
+        }
+
+        private void OnEnable()
+        {
+            if (!_initialized)
+                Initialize();
         }
 
         private void Initialize()
@@ -37,12 +45,14 @@ namespace Control
             _remainingRoles.Add(PlayerRole.Valkyrie);
 
             ResetPlayerData();
-            
+            _initialized = true;
+
             // InstructionRemover.SetPlayerCount(0);
         }
 
         private void ResetPlayerData()
         {
+            Debug.Log("Reset Player Data!");
             elf.Reset();
             valkyrie.Reset();
             warrior.Reset();
@@ -57,6 +67,7 @@ namespace Control
                 InstructionRemover.SetPlayerCount(_playerInputs.Count);
                 ChooseRole(playerInput);
                 MoveNearOtherPlayers(playerInput);
+                playerInput.GetComponent<PlayerOverseer>().playerData.Reset();
             }
         }
 
@@ -76,7 +87,7 @@ namespace Control
             if (_playerInputs.Count <= 0)
             {
                 InstructionRemover.SetPlayerCount(0);
-                Initialize();
+                _initialized = false;
                 onTeamDeath?.Invoke();
             }
         }

@@ -157,6 +157,7 @@ MonoBehaviour:
   enemyLevel: 3
   enemyDamage: 0
   isAttacking: 0
+  score: 13
   canBeHit: 0
   rockGO: {fileID: 29559505861792339, guid: ecdbdacd9a5dd5b4a8e0388c03b3012f, type: 3}
 --- !u!114 &5024832977831409633

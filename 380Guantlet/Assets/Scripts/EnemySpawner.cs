@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     private BaseEnemy _baseEnemy;
 
     [Range(1, 3)]
-    public int spawnerLevel;
+    public int spawnerLevel = 3;
     public bool isBones;
     private int _spawnLimit = 10;
     private int _spawnAmount;
@@ -43,18 +43,27 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Weapon" && !isBones)
+        // Debug.Log($"{other.gameObject.name} hit {gameObject.name}! (lv. {spawnerLevel.ToString()})");
+        if (other.CompareTag("Weapon"))
         {
+            if(isBones)
+                Release();
+            
             spawnerLevel--;
             _baseEnemy.enemyLevel = spawnerLevel;
+            
             if (spawnerLevel <= 0)
-                Destroy(this.gameObject);
+                Release();
         }
-        if(other.gameObject.tag == "Weapon" && isBones)
-            Destroy(this.gameObject);
+        
 
-        if (other.gameObject.tag == "Fireball")
+        if (other.CompareTag("Fireball"))
             Destroy(this.gameObject);
+    }
+
+    private void Release()
+    {
+        Destroy(this.gameObject);
     }
 
     /*private void OnGUI()

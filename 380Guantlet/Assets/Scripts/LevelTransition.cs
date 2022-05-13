@@ -1,12 +1,15 @@
 using System.Collections.Generic;
 using Data;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelTransition : MonoBehaviour
 {
     public EventNetwork eventNetwork;
     public GameObject currentLevel;
     public GameObject nextLevel;
+    public bool finalExit;
+    public UnityEvent onFinalExit;
 
     private float spawnOffset = 0;
     private List<GameObject> _players = new List<GameObject>();
@@ -28,6 +31,10 @@ public class LevelTransition : MonoBehaviour
 
     private void LevelChange()
     {
+        if (finalExit)
+            onFinalExit?.Invoke();
+        
+        _players.Clear();
         foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
         {
             _players.Add(player);

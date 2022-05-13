@@ -3,17 +3,45 @@
   <component name="ChangeListManager">
     <list default="true" id="a877f073-fd82-4f87-aec8-72cd970a20ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.380Guantlet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.380Guantlet/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/QuestorsWeapon/QuestorsWeapon.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/QuestorsWeapon/QuestorsWeapon.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/QuestorsWeapon/bowAndArrow.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/QuestorsWeapon/bowAndArrow.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/QuestorsWeapon/bowAndArrowGraphic.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/QuestorsWeapon/bowAndArrowGraphic.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Controller.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Controller.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enemy Material/grunt_mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enemy Material/grunt_mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/gold_metal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/gold_metal.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/MerlinGraphics.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/MerlinGraphics.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/QuestorsWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/QuestorsWeapon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/ThorsWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/ThorsWeapon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/ThyraGraphics.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/ThyraGraphics.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/ThyrasWeapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/ThyrasWeapon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Demon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Demon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Ghost.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Ghost.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Grunt.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Grunt.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Lobber.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Lobber.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Sorcerer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPrefabs/Sorcerer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Interactables/Meat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Interactables/Meat.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Interactables/Treasure.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Interactables/Treasure.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerGroup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/DemonSpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/DemonSpawner.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/GruntSpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/GruntSpawner.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/LobberSpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/LobberSpawner.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/SorcererSpawner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SpawnerPrefabs/SorcererSpawner.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/OfficialScenes/Defeat.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/OfficialScenes/Defeat.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/OfficialScenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/OfficialScenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/OfficialScenes/Game/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/OfficialScenes/Game/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/OfficialScenes/Victory.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/OfficialScenes/Victory.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/PlayerOverseer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/PlayerOverseer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Control/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Control/PlayerManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Elf.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Elf.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Valkyrie.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Valkyrie.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Warrior.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Warrior.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Wizard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/Generated/Wizard.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/BaseEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/BaseEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyTypes/Death.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyTypes/Death.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelTransition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelTransition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/AnnouncerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/AnnouncerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/Controller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +77,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds/Gauntlet_v1\380Guantlet.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="D:\Unity Projects\380Gauntlet\380Guantlet\Builds\Gauntlet_v1" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -91,6 +127,8 @@
       <workItem from="1652286161378" duration="1903000" />
       <workItem from="1652295173123" duration="18468000" />
       <workItem from="1652434467047" duration="754000" />
+      <workItem from="1652464415699" duration="671000" />
+      <workItem from="1652465368482" duration="5270000" />
     </task>
     <servers />
   </component>

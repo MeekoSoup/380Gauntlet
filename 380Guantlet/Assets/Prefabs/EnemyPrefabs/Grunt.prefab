@@ -107,6 +107,7 @@ MonoBehaviour:
   enemyLevel: 0
   enemyDamage: 0
   isAttacking: 0
+  score: 5
   canBeHit: 0
   clubGO: {fileID: 6028963542542272552, guid: 3e1382b9325ef2240a4b9f5e67b1f1c8, type: 3}
 --- !u!114 &6743932405823970433

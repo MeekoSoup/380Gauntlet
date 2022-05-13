@@ -157,6 +157,7 @@ MonoBehaviour:
   enemyLevel: 3
   enemyDamage: 0
   isAttacking: 0
+  score: 12
   canBeHit: 0
   biteGO: {fileID: 6028963542542272552, guid: f4e7d26d424ee0248b9038816d74ac09, type: 3}
   fireballGO: {fileID: 9189276133914474540, guid: c7bbb2800809a71419218593e0342ec9, type: 3}

@@ -37,6 +37,26 @@ public class Death : MonoBehaviour
         eventNetwork.OnPlayerKilled += AcquireTarget;
         eventNetwork.OnPlayerDisconnect += AcquireTarget;
         eventNetwork.OnLevelLoad += AcquireTarget;
+        eventNetwork.OnPlayerUseNuke += NukeDeath;
+    }
+
+    private void NukeDeath(PlayerInput playerInput = null)
+    {
+        if (!playerInput)
+        {
+            Release();
+            return;
+        }
+
+        var overseer = playerInput.GetComponent<PlayerOverseer>();
+        if (!overseer)
+        {
+            Release();
+            return;
+        }
+
+        overseer.playerData.score += deathPoints;
+        Release();
     }
 
     private void OnDisable()
@@ -59,8 +79,13 @@ public class Death : MonoBehaviour
         enemy.destination = player.transform.position;
 
         if (_drainedHealth >= 200)
-            Destroy(this.gameObject);
+            Release();
 
+    }
+
+    private void Release()
+    {
+        Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -79,7 +104,7 @@ public class Death : MonoBehaviour
 
         if (other.CompareTag("Potion"))
         {
-            Destroy(this.gameObject);
+            Release();
         }
     }
 
@@ -92,9 +117,12 @@ public class Death : MonoBehaviour
     IEnumerator DeathAttack()
     {        
         _drainedHealth += 5;
+        
         if (_player)
             _player.playerData.health -= 5;
+        
         yield return new WaitForSeconds(0.1f);
+        
         if (isDrain)
             StartCoroutine(DeathAttack());
     }

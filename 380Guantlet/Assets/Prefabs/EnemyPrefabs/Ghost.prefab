@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6c561f2b9d63bb2478590ed2e8b0fb6b, type: 2}
+  - {fileID: 2100000, guid: a0807cb05da75634d9b064826dd3c4de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -157,6 +157,7 @@ MonoBehaviour:
   enemyLevel: 3
   enemyDamage: 0
   isAttacking: 0
+  score: 10
   canBeHit: 0
 --- !u!114 &3141653853099071237
 MonoBehaviour:

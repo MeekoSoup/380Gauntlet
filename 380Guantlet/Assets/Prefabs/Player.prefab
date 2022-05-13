@@ -215,11 +215,15 @@ MonoBehaviour:
   followCam: {fileID: 6812088492517778866, guid: f93abcf73a0bb484392380ceb6cc5736, type: 3}
   graphicsParent: {fileID: 2436662190493925718}
   weaponParent: {fileID: 6932735311669287334}
+  potionCooldownTime: 1
   healthBarImage: {fileID: 0}
+  heroNameText: {fileID: 0}
+  heroPortraitImage: {fileID: 0}
   healthText: {fileID: 0}
   keysText: {fileID: 0}
   potionsText: {fileID: 0}
   treasureText: {fileID: 0}
+  potionPrefab: {fileID: 0}
 --- !u!136 &6530106714562921162
 CapsuleCollider:
   m_ObjectHideFlags: 0

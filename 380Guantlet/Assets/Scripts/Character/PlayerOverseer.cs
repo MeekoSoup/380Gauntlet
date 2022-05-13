@@ -19,6 +19,7 @@ namespace Character
         public GameObject followCam;
         public GameObject graphicsParent;
         public GameObject weaponParent;
+        public float potionCooldownTime = 1f;
 
         [Header("GUI Properties")] 
         public Image healthBarImage;
@@ -34,12 +35,14 @@ namespace Character
         
         private IWeapon _weapon;
         private PlayerInput _playerInput;
+        private bool _canUsePotion;
 
         // private bool _coinStarted;
 
         private void Awake()
         {
             _playerInput = GetComponent<PlayerInput>();
+            _canUsePotion = true;
         }
 
         private void Start()
@@ -88,7 +91,6 @@ namespace Character
                 GetComponent<PlayerMovement>().enabled = false;
                 graphicsParent.SetActive(false);
                 weaponParent.SetActive(false);
-                playerData.Reset();
                 // TODO: Remove only if you can properly remove reliance on finding this class from other objects
                 this.enabled = false;
                 // gameObject.SetActive(false);
@@ -100,8 +102,17 @@ namespace Character
             if (!playerData) return;
             if (playerData.potions <= 0) return;
             if (playerData.health <= 0) return;
+            if (!_canUsePotion) return;
             playerData.potions--;
             eventNetwork.OnPlayerUseNuke?.Invoke(_playerInput);
+            _canUsePotion = false;
+            StartCoroutine(PotionCooldown());
+        }
+
+        private IEnumerator PotionCooldown()
+        {
+            yield return new WaitForSeconds(potionCooldownTime);
+            _canUsePotion = true;
         }
 
         private void UpdateGUI(PlayerInput playerInput = null)

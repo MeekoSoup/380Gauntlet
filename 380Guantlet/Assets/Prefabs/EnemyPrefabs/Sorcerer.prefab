@@ -157,6 +157,7 @@ MonoBehaviour:
   enemyLevel: 3
   enemyDamage: 0
   isAttacking: 0
+  score: 17
   canBeHit: 0
   spellGO: {fileID: 6028963542542272552, guid: 24280342c40d89346876ec4ee059f035, type: 3}
 --- !u!114 &4077323577658815268
